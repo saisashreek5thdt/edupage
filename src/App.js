@@ -19,6 +19,7 @@ const deserts = [
     id: 2,
     name: "Types of Desert",
     href: "/page/desert/types/",
+    //href: "/",
     imageSrc: DesertBg2,
     imageAlt:
       "A hot desert has very high temperature during the day, but nights are quite cold, sometimes freezing cold.",
@@ -27,6 +28,7 @@ const deserts = [
     id: 3,
     name: "Habitat",
     href: "/page/desert/habitat/",
+    //href: "/",
     imageSrc: DesertBg3,
     imageAlt:
       "Desert plants and animals have features that help them survive in the dry climate.",
@@ -35,6 +37,7 @@ const deserts = [
     id: 4,
     name: "Oasis",
     href: "/page/desert/oasis/info/",
+    //href: "/",
     imageSrc: DesertBg4,
     imageAlt:
       "Oasis is a natural source of water in a desert.",

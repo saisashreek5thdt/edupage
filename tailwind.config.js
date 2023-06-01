@@ -9,7 +9,8 @@ module.exports = {
     fontFamily: {
       Quicksand: ['Quicksand', 'sans-serif'],
       Baloo: ['Baloo 2', 'cursive'],
-      Linotte: ['Linotte', 'sans-serif']
+      Linotte: ['Linotte', 'sans-serif'],
+      Jost: ['Jost', 'sans-serif']
     }
   },
   corePlugins: {
