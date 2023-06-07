@@ -70,21 +70,21 @@ const DesertInfo = () => {
 
             <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 overflow-hidden">
               <div className="sm:text-center lg:text-left">
-                <h1 className="text-4xl font-bold font-Jost tracking-tight text-gray-900 text-justify sm:text-5xl md:text-6xl">
-                  <span className="block xl:inline font-Jost">What is a Desert?</span>
+                <h1 className="text-4xl font-bold font-Linotte tracking-tight text-gray-900 text-justify sm:text-5xl md:text-6xl">
+                  <span className="block xl:inline font-Linotte">What is a Desert?</span>
                 </h1>
-                <p className="mt-3 font-Jost text-base text-gray-500 whitespace-nowrap sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:whitespace-normal md:text-base md:text-justify md:overflow-hidden lg:mx-0 sm:whitespace-normal">
+                <p className="mt-3 font-Linotte text-base text-gray-500 whitespace-nowrap sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:whitespace-normal md:text-base md:text-justify md:overflow-hidden lg:mx-0 sm:whitespace-normal">
                   A desert is a large region that gets very little rain each
                   year. Most deserts get less than 10 inches of rain in a year.
                 </p>
-                <p className="mt-3 font-Jost text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0">
+                <p className="mt-3 font-Linotte text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0">
                   Some deserts are hot and some are cold. Some deserts are huge
                   areas of sand while others have rocky hills and mountains. The
                   Deserts are found on every continent, and they cover more than
                   20% of the Earth. They are classified into two types – hot and
                   cold based on their temperature.
                 </p>
-                <p className="mt-3 font-Jost text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0">
+                <p className="mt-3 font-Linotte text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0">
                   Although both the lands are dry and have unfavourable climatic
                   conditions, they are different from each other in terms of
                   their climate and, flora and fauna. Very few plants or animals

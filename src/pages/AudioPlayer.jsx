@@ -1,4 +1,6 @@
 import React from "react";
+import ReactAudioPlayer from 'react-audio-player';
+import audio1 from "../assets/audio/audio1.mp3"
 
 const AudioPlayer = () => {
   return (
@@ -27,7 +29,7 @@ const AudioPlayer = () => {
               ></button>
             </div>
             <div className="modal-body relative p-4">
-              <p>This is a vertically centered modal.</p>
+              <ReactAudioPlayer src={audio1} controls volume />
             </div>
             <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
               <button
@@ -37,12 +39,15 @@ const AudioPlayer = () => {
               >
                 Close
               </button>
+              {/* 
               <button
                 type="button"
                 className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1"
+                data-bs-dismiss="modal"
               >
                 Save Changes
               </button>
+               */}
             </div>
           </div>
         </div>
