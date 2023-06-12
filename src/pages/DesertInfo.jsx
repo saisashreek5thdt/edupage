@@ -7,10 +7,10 @@ import MenuBtn from "./MenuBtn";
 import VideoPlayer from "./VideoPlayer";
 
 const DesertInfo = () => {
-  return (
-    <>
-      <MenuBtn />
-      {/*
+    return (
+        <>
+            <MenuBtn />
+            {/*
       <section className="text-gray-600 body-font">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -63,28 +63,28 @@ const DesertInfo = () => {
         </div>
       </section>
       */}
-
+            {/* 
       <div className="relative overflow-hidden">
         <div className="mx-auto max-w-auto">
           <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-auto lg:max-w-2xl lg:pb-28 xl:pb-32">
 
             <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 overflow-hidden">
               <div className="sm:text-center lg:text-left">
-                <h1 className="text-4xl font-bold font-Linotte tracking-tight text-gray-900 text-justify sm:text-5xl md:text-6xl">
-                  <span className="block xl:inline font-Linotte">What is a Desert?</span>
+                <h1 className="text-4xl font-bold tracking-tight text-gray-900 text-justify sm:text-5xl md:text-6xl">
+                  <span className="block xl:inline">What is a Desert?</span>
                 </h1>
-                <p className="mt-3 font-Linotte text-base text-gray-500 whitespace-nowrap sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:whitespace-normal md:text-base md:text-justify md:overflow-hidden lg:mx-0 sm:whitespace-normal">
+                <p className="mt-3 text-base text-gray-500 whitespace-nowrap sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:whitespace-normal md:text-base md:text-justify md:overflow-hidden lg:mx-0 sm:whitespace-normal">
                   A desert is a large region that gets very little rain each
                   year. Most deserts get less than 10 inches of rain in a year.
                 </p>
-                <p className="mt-3 font-Linotte text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0">
+                <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0">
                   Some deserts are hot and some are cold. Some deserts are huge
                   areas of sand while others have rocky hills and mountains. The
                   Deserts are found on every continent, and they cover more than
                   20% of the Earth. They are classified into two types – hot and
                   cold based on their temperature.
                 </p>
-                <p className="mt-3 font-Linotte text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0">
+                <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0">
                   Although both the lands are dry and have unfavourable climatic
                   conditions, they are different from each other in terms of
                   their climate and, flora and fauna. Very few plants or animals
@@ -118,11 +118,68 @@ const DesertInfo = () => {
           />
         </div>
       </div>
-
-      <VideoPlayer />
-      <AudioPlayer />
-    </>
-  );
+       */}
+            <div className="overflow-hidden bg-white py-24 sm:py-8">
+                <div className="mx-auto max-w-full px-6 lg:px-8">
+                    <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                        <div className="lg:pt-4">
+                            <div className="lg:max-w-lg">
+                                <h2 className="text-4xl font-semibold leading-7 text-indigo-600 sm:order-1">
+                                    What is a Desert
+                                </h2>
+                                <p className="mt-6 text-lg leading-8 text-gray-600 font-medium text-justify sm:order-3">
+                                    A desert is a large region that gets very
+                                    little rain each year. Most deserts get less
+                                    than 10 inches of rain in a year.
+                                </p>
+                                <p className="mt-6 text-lg leading-8 text-gray-600 font-medium text-justify sm:order-4">
+                                    Some deserts are hot and some are cold. Some
+                                    deserts are huge areas of sand while others
+                                    have rocky hills and mountains. The Deserts
+                                    are found on every continent, and they cover
+                                    more than 20% of the Earth. They are
+                                    classified into two types – hot and cold
+                                    based on their temperature.
+                                </p>
+                                <p className="mt-6 text-lg leading-8 text-gray-600 font-medium text-justify sm:order-5">
+                                    Although both the lands are dry and have
+                                    unfavourable climatic conditions, they are
+                                    different from each other in terms of their
+                                    climate and, flora and fauna. Very few
+                                    plants or animals live in desert areas.
+                                </p>
+                            </div>
+                            <div className="flex flex-col md:flex-row md:gap-x-8 py-5">
+                                <div
+                                    className="rounded-md shadow cursor-pointer"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#videoModal"
+                                >
+                                    {videoBtn()}
+                                </div>
+                                <div
+                                    className="mt-3 sm:mt-0 sm:ml-3 cursor-pointer"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#audioModal"
+                                >
+                                    {audioBtn()}
+                                </div>
+                            </div>
+                        </div>
+                        <img
+                            src={DesertBg1}
+                            alt="Product screenshot"
+                            className="w-[37rem] max-w-none sm:w-[37rem] sm:order-2 md:w-[35rem] lg:w-[50rem]"
+                            width={2432}
+                            height={1442}
+                        />
+                    </div>
+                </div>
+            </div>
+            <VideoPlayer />
+            <AudioPlayer />
+        </>
+    );
 };
 
 export default DesertInfo;

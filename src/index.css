@@ -10,21 +10,12 @@
     src: url('assets/fonts/LINOTTE\ HEAVY.OTF') format('otf');
 }
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    font-family: inherit;
-}
-
-html,
-body {
-    box-sizing: border-box;
-    font-family: 'Linotte', sans-serif;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        font-family: 'Linotte', sans-serif;
+    }
+}
