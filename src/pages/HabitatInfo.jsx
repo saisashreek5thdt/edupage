@@ -60,10 +60,10 @@ const galleryImgs = [
 const HabitatInfo = () => {
   return (
     <>
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font h-screen overflow-y-hidden">
         <MenuBtn />
-        <div className="container mx-auto flex px-5 pb-24 md:flex-row flex-col items-center">
-          <div className="lg:flex-grow  md:w-1/2 lg:pr-36 md:pr-16 flex flex-col md:items-start md:text-left pb-44 md:mb-0 items-center text-center">
+        <div className="container   mx-auto flex px-5 pb-24 md:flex-row flex-col items-center">
+          <div className="lg:flex-grow lg:relative lg:bottom-14 md:w-1/2 lg:pr-36 md:pr-16 flex flex-col md:items-start md:text-left pb-44 md:mb-0 items-center text-center">
             <h1 className="title-font sm:text-4xl text-3xl mb-12 font-normal w-4/5 font-Linotte text-gray-900">
               Habitat
             </h1>
@@ -76,22 +76,22 @@ const HabitatInfo = () => {
             </p>
             <p className="mb-8 leading-relaxed font-Linotte font-medium text-left">
               Animals survive in deserts by living underground or resting in
-              burrows during the heat of the day. Desert plants and animals have
-              features that help them survive in the dry climate.
+              burrows during the heat of the day.
             </p>
             <p className="mb-8 leading-relaxed font-Linotte font-medium text-left">
-              Some plants have special roots that help them absorb the small
-              amount of water that is available.
+              Desert plants and animals have features that help them survive in
+              the dry climate. Some plants have special roots that help them
+              absorb the small amount of water that is available.
             </p>
             <p className="mb-8 leading-relaxed font-Linotte font-medium text-left">
               Desert plants deal with water shortage as: <br />
               <ul className="list-item mx-10 py-3">
                 <li>
-                  They have very long and deep roots to get water from under the
-                  ground
+                  i). They have very long and deep roots to get water from under
+                  the ground
                 </li>
                 <li>
-                  They have thick leaves to store water and prevent loss of
+                  ii). They have thick leaves to store water and prevent loss of
                   water through transpiration
                 </li>
               </ul>
