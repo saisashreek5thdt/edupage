@@ -39,14 +39,12 @@ const deserts = [
     href: "/page/desert/oasis/info/",
     //href: "/",
     imageSrc: DesertBg4,
-    imageAlt:
-      "Oasis is a natural source of water in a desert.",
+    imageAlt: "Oasis is a natural source of water in a desert.",
   },
   // More products...
 ];
 
 const App = () => {
-
   return (
     <>
       <div className="bg-white">
