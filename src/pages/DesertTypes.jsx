@@ -50,7 +50,7 @@ const DesertTypes = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex sm:flex-row md:flex-col">
+                    <div className="flex sm:flex-row md:flex-row">
                         <img
                             className="object-cover object-center rounded h-auto md:h-72"
                             alt="desert-info"
