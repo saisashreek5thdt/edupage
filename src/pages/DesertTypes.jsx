@@ -13,7 +13,7 @@ const DesertTypes = () => {
         <>
             <MenuBtn />
             <section className="overflow-hidden text-gray-600 body-font md:overscroll-none">
-                <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                <div className="container mx-auto flex px-5  py-24 md:flex-row flex-col items-center">
                     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold font-Linotte text-gray-900">
                             Types of Deserts
@@ -50,7 +50,7 @@ const DesertTypes = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex sm:flex-row md:flex-row">
+                    <div className="flex sm:flex-row md:flex-col">
                         <img
                             className="object-cover object-center rounded h-auto md:h-72"
                             alt="desert-info"
@@ -117,8 +117,7 @@ const DesertTypes = () => {
                     />
                 </div>
             </div>
-             */}
-            {/*
+             
             <div className="bg-white">
                 <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
                     <div>
