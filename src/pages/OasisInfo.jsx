@@ -3,6 +3,7 @@ import React from "react";
 import DesertBg4 from "../assets/images/Oasis.png";
 import { videoBtn, audioBtn } from "../pages/Btns";
 import AudioPlayer from "./AudioPlayer";
+import didYouKnow from "../assets/icons/Group 7345.png";
 
 import MenuBtn from "./MenuBtn";
 import VideoPlayer from "./VideoPlayer";
@@ -11,24 +12,21 @@ const OasisInfo = () => {
   return (
     <>
       <MenuBtn />
-      <section className="text-gray-600 body-font h-screen overflow-y-hidden">
+      <section className="text-gray-600 body-font h-[582px] overflow-y-hidden">
         <div className=" container mx-auto flex px-24  md:flex-row flex-col items-center">
-          <div className="lg:flex-grow lg:w-5 md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <div className="lg:flex-grow lg:w-5 md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left  md:mb-0 items-center text-center">
             <h1 className="title-font font-normal sm:text-4xl text-3xl mb-4  font-Linotte text-gray-900">
               Oasis
             </h1>
-            <p className="mb-8 leading-relaxed font-Linotte font-medium text-justify">
+            <p className="mb-4 leading-relaxed font-Linotte font-medium  text-left">
               Oasis is a natural source of water in a desert. A fertile place in
               a desert where water comes up to the surface from deep
-              underground.
+              underground. Trees and other plants grow around an oasis, and
+              animals come to drink, eat the plants, and find shade. Oases vary
+              in size, ranging from about 1 hectare (2.5 acres) around small
+              springs to vast areas of naturally watered or irrigated land.
             </p>
-            <p className="mb-8 leading-relaxed font-Linotte font-medium text-justify">
-              Trees and other plants grow around an oasis, and animals come to
-              drink, eat the plants, and find shade. Oases vary in size, ranging
-              from about 1 hectare (2.5 acres) around small springs to vast
-              areas of naturally watered or irrigated land.
-            </p>
-            <p className="mb-8 leading-relaxed font-Linotte font-medium text-justify">
+            <p className="mb-1 leading-relaxed font-Linotte font-medium  text-left">
               Popular deserts of the world <br />
               <ol className="list-decimal mx-10 py-3">
                 <li>&emsp; &emsp; Thar desert – India - Hot</li>
@@ -60,11 +58,16 @@ const OasisInfo = () => {
               </button>
             </div>
           </div>
-          <div className=" relative bottom-44  lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+          <div className=" relative h-6 bottom-72 lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
             <img
               className="object-cover object-center rounded"
               alt="desert-info"
               src={DesertBg4}
+            />
+            <img
+              className=" relative object-cover h-52 top-8 object-center rounded"
+              alt="desert-info"
+              src={didYouKnow}
             />
           </div>
         </div>
