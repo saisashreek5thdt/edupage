@@ -10,7 +10,6 @@ const DesertInfo = () => {
   return (
     <>
       <MenuBtn />
-
       <div className="relative overflow-hidden">
         <div className="mx-auto max-w-auto">
           <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-auto lg:max-w-2xl lg:pb-28 xl:pb-32">
