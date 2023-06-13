@@ -4,6 +4,8 @@ import DesertType1 from "../assets/images/Desert-Type-1.png";
 import DesertType2 from "../assets/images/Desert-Type-2.png";
 import { videoBtn, audioBtn } from "../pages/Btns";
 import AudioPlayer from "./AudioPlayer";
+import factsBtn from "../assets/icons/Group_7314.png";
+import clickHereBtn from "../assets/icons/Group_7344.png";
 
 import MenuBtn from "./MenuBtn";
 import VideoPlayer from "./VideoPlayer";
@@ -29,6 +31,18 @@ const DesertTypes = () => {
               is so cold there. They have mildly hot summers and extremely cold
               winters.
             </p>
+            <div className="flex sm:flex-row md:flex-col">
+              <img
+                className="object-cover object-center rounded h-auto md:h-72"
+                alt="desert-info"
+                src={factsBtn}
+              />
+              <img
+                className="object-cover object-center rounded h-auto md:h-72"
+                alt="desert-info"
+                src={clickHereBtn}
+              />
+            </div>
             <div className="flex lg:flex-row md:flex-col">
               <button
                 type="button"
