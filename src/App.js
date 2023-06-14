@@ -41,6 +41,30 @@ const deserts = [
     imageSrc: DesertBg4,
     imageAlt: "Oasis is a natural source of water in a desert.",
   },
+  {
+    id: 5,
+    name: "SandDunes",
+    href: "/page/desert/sanddunes/",
+    //href: "/",
+    imageSrc: DesertBg4,
+    imageAlt: "Oasis is a natural source of water in a desert.",
+  },
+  {
+    id: 6,
+    name: "Vegetation",
+    href: "/page/desert/vegetation/",
+    //href: "/",
+    imageSrc: DesertBg4,
+    imageAlt: "Oasis is a natural source of water in a desert.",
+  },
+  {
+    id: 7,
+    name: "Trivia",
+    href: "/page/desert/trivia/",
+    //href: "/",
+    imageSrc: DesertBg4,
+    imageAlt: "Oasis is a natural source of water in a desert.",
+  },
   // More products...
 ];
 
