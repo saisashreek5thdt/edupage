@@ -9,15 +9,15 @@ import VideoPlayer from "./VideoPlayer";
 const DesertInfo = () => {
   return (
     <>
-      <section className="text-gray-600 body-font h-screen overflow-y-hidden">
+      <section className="text-gray-600 ">
         <MenuBtn />
         <div className="relative h-[580px] overflow-y-hidden overflow-hidden bottom-16 ">
           <div className=" relative bottom-24 mx-auto max-w-auto">
             <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-auto lg:max-w-2xl lg:pb-28 xl:pb-32">
               <main className="mx-auto relative top-9  mt-10 m max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 overflow-hidden">
                 <div className="sm:text-center ml-8 sm:ml-14 md:ml-20 lg:ml-28  lg:text-left">
-                  <h1 className="text-3xl font-normal font-Linotte tracking-tight text-gray-900 text-justify  sm:text-4xl md:text-1xl mb-5">
-                    <span className="block pt-7 xl:inline font-Linotte">
+                  <h1 className="text-3xl   tracking-tight text-gray-900 text-justify  sm:text-4xl md:text-1xl mb-5">
+                    <span className="block pt-7 xl:inline ">
                       What is a Desert?
                     </span>
                   </h1>
@@ -26,12 +26,12 @@ const DesertInfo = () => {
                     src={DesertBg1}
                     alt=""
                   />
-                  <p className="mt-3 font-Linotte text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 sm:whitespace-normal text-left">
+                  <p className="mt-3   text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 sm:whitespace-normal text-left">
                     A desert is a large region that gets very little rain each
                     year. Most deserts get less than 10 inches of rain in a
                     year.
                   </p>
-                  <p className="mt-3 font-Linotte text-left text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 lg:text-left">
+                  <p className="mt-3   text-left text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 lg:text-left">
                     Some deserts are hot and some are cold. Some deserts are
                     huge areas of sand while others have rocky hills and
                     mountains. The Deserts are found on every continent, and
@@ -41,7 +41,7 @@ const DesertInfo = () => {
                     climatic conditions, they are different from each other in
                     terms of their climate and, flora and fauna.
                   </p>
-                  <p className="mt-3 font-Linotte text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 lg:text-left">
+                  <p className="mt-3   text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 lg:text-left">
                     Very few plants or animals live in desert areas.
                   </p>
                   <div className="z-0 pt-10  sm:mt-8 sm:flex sm:justify-center lg:justify-start">

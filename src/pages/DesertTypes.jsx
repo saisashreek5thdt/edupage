@@ -1,23 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 
 import DesertType1 from "../assets/images/Desert-Type-1.png";
 import DesertType2 from "../assets/images/Desert-Type-2.png";
-import { videoBtn, audioBtn } from "../pages/Btns";
 import AudioPlayer from "./AudioPlayer";
 import factsBtn from "../assets/icons/Group_7314.png";
 import clickHereBtn from "../assets/icons/Group_7344.png";
 
 import MenuBtn from "./MenuBtn";
 import VideoPlayer from "./VideoPlayer";
+import ModalBox from "./ModalBox";
 
 const DesertTypes = () => {
+  const [desertTypes, setDesertTypes] = useState("");
+  const handleClick = () => {
+    setDesertTypes([DesertType1, DesertType2]);
+  };
+
   return (
     <>
       <MenuBtn />
-      <section className=" overflow-hidden text-gray-600 body-font md:overscroll-none">
+      <section className=" h-[100vh] text-gray-600 body-font ">
         <div className="container mx-auto flex px-20   md:flex-row flex-col items-center">
-          <div className="relative lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="title-font font-normal sm:text-4xl text-3xl mb-4  font-Linotte text-gray-900 ">
+          <div className="relative lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col     md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="title-font font-normal sm:text-4xl text-3xl mb-9  font-Linotte text-gray-900 ">
               Types of Deserts
             </h1>
             <p className="mb-8 leading-relaxed font-Linotte font-medium text-left">
@@ -31,9 +36,12 @@ const DesertTypes = () => {
               is so cold there. They have mildly hot summers and extremely cold
               winters.
             </p>
-            <div class=" flex cursor-pointer flex-grow  shadow-xl">
+
+            <div
+              class=" flex cursor-pointer flex-grow  shadow-xl"
+              onClick={() => handleClick()}
+            >
               <img
-                clas
                 src={factsBtn}
                 className=" border-r-4 border-purple-700 relative left-1 object-cover ml-2 mt-8 object-center  h-auto md:h-16"
                 alt="desert-info"
@@ -77,6 +85,12 @@ const DesertTypes = () => {
               src={DesertType2}
             />
           </div>
+          {desertTypes && (
+            <ModalBox
+              desertTypes={desertTypes}
+              setDesertTypes={setDesertTypes}
+            />
+          )}
         </div>
       </section>
       {/* 

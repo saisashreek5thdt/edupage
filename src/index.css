@@ -1,30 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&display=swap");
 
 @font-face {
-    font-family: 'Linotte';
-    src: url('assets/fonts/LINOTTE\ REGULAR.OTF') format('otf');
-    src: url('assets/fonts/LINOTTE-SEMIBOLD.OTF') format('otf');
-    src: url('assets/fonts/LINOTTE\ BOLD.OTF') format('otf');
-    src: url('assets/fonts/LINOTTE\ HEAVY.OTF') format('otf');
-}
-
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    font-family: inherit;
-}
-
-html,
-body {
-    box-sizing: border-box;
-    font-family: 'Linotte', sans-serif;
+  font-family: "Linotte";
+  src: url("assets/fonts/LINOTTE\ REGULAR.OTF") format("otf");
+  src: url("assets/fonts/LINOTTE-SEMIBOLD.OTF") format("otf");
+  src: url("assets/fonts/LINOTTE\ BOLD.OTF") format("otf");
+  src: url("assets/fonts/LINOTTE\ HEAVY.OTF") format("otf");
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Linotte", sans-serif;
+    overflow: hidden;
+  }
+}
+
+.bg-image {
+  background-image: url("./assets/bg/Group\ 3841.png");
+}
+
+ul li a {
+  @apply rounded py-[7px] px-[13px] text-[17px]
+
+hover:bg-slate-300 transition-all duration-300;
+}
