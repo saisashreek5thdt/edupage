@@ -115,8 +115,6 @@ const Home = () => {
           </ul>
         </div>
       </div>
-
-      <Footer setOpen={setOpen} open={open} />
     </div>
   );
 };

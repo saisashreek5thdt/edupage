@@ -5,6 +5,7 @@ import AudioPlayer from "./AudioPlayer";
 
 import MenuBtn from "./MenuBtn";
 import VideoPlayer from "./VideoPlayer";
+import Footer from "./Footer";
 
 const DesertInfo = () => {
   return (
@@ -31,7 +32,7 @@ const DesertInfo = () => {
                     year. Most deserts get less than 10 inches of rain in a
                     year.
                   </p>
-                  <p className="mt-3   text-left text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 lg:text-left">
+                  <p className="mt-3   text-left text-base text-gray-500 sm:mx-auto sm:mt-5    sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 lg:text-left">
                     Some deserts are hot and some are cold. Some deserts are
                     huge areas of sand while others have rocky hills and
                     mountains. The Deserts are found on every continent, and

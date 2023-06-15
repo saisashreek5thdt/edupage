@@ -22,7 +22,7 @@ root.render(
       <Route path="/page/desert/habitat/" element={<HabitatInfo />} />
       <Route path="/page/desert/oasis/info/" element={<OasisInfo />} />
     </Routes>
-    {/* <Footer /> */}
+    <Footer />
   </BrowserRouter>
 );
 
