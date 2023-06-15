@@ -13,7 +13,10 @@ const OasisModalBox = ({ setClickedImg }) => {
   return (
     <>
       <div className="overlay  dismiss">
-        <div className="mainContainer px-5 py-10 pb-16 rounded-3xl h-[1100px]  w-[30%]">
+        <div
+          className="mainContainer bg-orange-200
+         px-5 py-10 pb-16 rounded-3xl h-[1100px]  w-[30%]"
+        >
           <div className="flex w-full">
             <div className="w-[60%] ">
               <img alt="" className="mb-2" src={img1} />
