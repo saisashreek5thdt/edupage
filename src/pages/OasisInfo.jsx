@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import DesertBg4 from "../assets/images/Oasis.png";
 import { videoBtn, audioBtn } from "../pages/Btns";
@@ -7,8 +7,14 @@ import didYouKnow from "../assets/icons/Group 7345.png";
 
 import MenuBtn from "./MenuBtn";
 import VideoPlayer from "./VideoPlayer";
+import OasisModalBox from "./OasisModalBox";
 
 const OasisInfo = () => {
+  const [clickedImg, setClickedImg] = useState(false);
+
+  const handleClick = () => {
+    setClickedImg(true);
+  };
   return (
     <>
       <MenuBtn />
@@ -65,11 +71,13 @@ const OasisInfo = () => {
               src={DesertBg4}
             />
             <img
-              className=" relative object-cover h-52 top-8 object-center rounded"
+              className=" cursor-pointer relative object-cover h-52 top-8 object-center rounded"
               alt="desert-info"
+              onClickCapture={() => handleClick()}
               src={didYouKnow}
             />
           </div>
+          {clickedImg && <OasisModalBox setClickedImg={setClickedImg} />}
         </div>
       </section>
       <VideoPlayer />
