@@ -24,7 +24,7 @@ import footerIndex from "../assets/index/Component 9 – 2.png";
 
 function Footer() {
   return (
-    <div className="bg-footerbg flex bg-footer justify-between w-screen pt-3 pb-4 text-white text-sm">
+    <div className="bg-sky-700 flex justify-between w-screen pt-2 pb-3 text-white text-sm">
       <div className="flex w-1/4 justify-between">
         <p className="bg-white text-black p-2 pr-10 rounded-full rounded-l-none">
           Last Name
@@ -32,9 +32,9 @@ function Footer() {
         <p className="p-2">User Name</p>
         <p className="p-2">June 2022</p>
       </div>
-      <div className="w-1/3 flex flex-col justify-end  cursor-pointer text-center align-baseline">
+      <div className="w-1/3 flex flex-col justify-end text-center align-baseline">
         <div className="flex justify-center">
-          <img src={footerIndex} className="w-24  absolute bottom-8" />
+          <img src={footerIndex} className="w-24 absolute bottom-8" />
         </div>
         <p>Index</p>
       </div>

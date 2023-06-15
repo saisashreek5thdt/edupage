@@ -1,15 +1,21 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./index.scss";
-import "./assets/fonts/stylesheet.scss";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "tw-elements";
-import { DesertInfo, DesertTypes, HabitatInfo, OasisInfo } from "./pages";
-import Footer from "./pages/Footer";
+import {
+  DesertInfo,
+  DesertTypes,
+  HabitatInfo,
+  OasisInfo,
+  SandDunes,
+  Vegetation,
+  Trivia,
+} from "./pages";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -22,6 +28,9 @@ root.render(
       <Route path="/page/desert/types/" element={<DesertTypes />} />
       <Route path="/page/desert/habitat/" element={<HabitatInfo />} />
       <Route path="/page/desert/oasis/info/" element={<OasisInfo />} />
+      <Route path="/page/desert/sanddunes/" element={<SandDunes />} />
+      <Route path="/page/desert/vegetation/" element={<Vegetation />} />
+      <Route path="/page/desert/trivia/" element={<Trivia />} />
     </Routes>
   </BrowserRouter>
 );

@@ -6,8 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        footer: "rgb(9, 77, 120)",
+      width: {
+        700: "700px",
+        800: "800px",
+      },
+      fontSize: {
+        16: "16px",
       },
     },
     fontFamily: {
@@ -17,6 +21,7 @@ module.exports = {
       Jost: ["Jost", "sans-serif"],
     },
   },
+
   corePlugins: {
     aspectRatio: false,
   },
