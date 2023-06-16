@@ -112,7 +112,6 @@ const Trivia = () => {
           last={"/page/desert/habitat/"}
           next={"/page/desert/sanddunes/"}
           hidePageBtn={false}
-          nextTopicBtn={true}
         />
       </div>
     </div>

@@ -10,12 +10,23 @@ import VideoPlayer from "./VideoPlayer";
 import OasisModalBox from "./OasisModalBox";
 import Footer from "./Footer";
 
+import ReactAudioPlayer from "react-audio-player";
+import audio1 from "../assets/audio/audio1.mp3";
+import Audio from "./Audio";
+
 const OasisInfo = () => {
   const [clickedImg, setClickedImg] = useState(false);
 
   const handleClick = () => {
     setClickedImg(true);
   };
+
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayPause = () => {
+    setIsPlaying((prevState) => !prevState);
+  };
+
   return (
     <>
       <section className="text-gray-600 body-font h-[632px] overflow-y-hidden">
@@ -46,23 +57,21 @@ const OasisInfo = () => {
                 <li>&emsp; &emsp; Sonoran Desert – USA/Mexico</li>
               </ol>
             </p>
-            <div className="flex relative bottom-4 lg:flex-row md:flex-col">
-              <button
-                type="button"
-                className="inline-flex py-3 px-5 items-center focus:outline-none"
+            <div className="z-0 pt-0  sm:flex sm:justify-center lg:justify-start">
+              <div
+                className="rounded-md shadow cursor-pointer mr-4"
                 data-bs-toggle="modal"
                 data-bs-target="#videoModal"
               >
                 {videoBtn()}
-              </button>
-              <button
-                type="button"
-                className="inline-flex py-3 px-5 items-center focus:outline-none"
-                data-bs-toggle="modal"
-                data-bs-target="#audioModal"
-              >
-                {audioBtn()}
-              </button>
+              </div>
+              <div className="mt-3 sm:mt-0 sm:ml-3 cursor-pointer">
+                {/* {audioBtn()} */}
+
+                <div onClick={handlePlayPause}>
+                  <Audio isPlaying={isPlaying} />
+                </div>
+              </div>
             </div>
           </div>
           <div className=" relative h-4 bottom-72 left-8 lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
@@ -82,7 +91,8 @@ const OasisInfo = () => {
         </div>
       </section>
       <VideoPlayer />
-      <AudioPlayer />
+      {/* <AudioPlayer /> */}
+      {isPlaying && <ReactAudioPlayer src={audio1} autoPlay />}
       <div className="absolute bottom-5">
         <Footer
           last={"/page/desert/habitat/"}

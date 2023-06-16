@@ -121,7 +121,6 @@
 // }
 
 // export default Asses;
-
 import React, { useEffect, useState } from "react";
 import userIcon from "../assets/images/user/userIcon.png";
 import startbutton from "../assets/assess/start-button.svg";
@@ -131,103 +130,16 @@ import newbg from "../assets/assess/newbg.svg";
 import qBanner from "../assets/assess/questions-banner.svg";
 import nextImage from "../assets/assess/next-img.svg";
 
-const allQuestions = [
-  {
-    id: 1,
-    question: "Who is making the Web Standards?",
-    option1: "Mozilla",
-    option2: "Microsoft",
-    option3: "Opera",
-    option4: "The WWW Consortium",
-    rightAns: "The WWW Consortium",
-  },
-  {
-    id: 2,
-    question: "Choose the correct HTML tag for largest heading",
-    option1: "Head",
-    option2: "H1",
-    option3: "H6",
-    option4: "Heading",
-    rightAns: "H1",
-  },
-  {
-    id: 3,
-    question: "Correct HTML tag for inserting a line break?",
-    option1: "br /br",
-    option2: "lb /",
-    option3: "br /",
-    option4: "br/",
-    rightAns: "br/",
-  },
-  {
-    id: 4,
-    question: "Choose the correct HTML tag to make a text bold",
-    option1: "bold",
-    option2: "b",
-    option3: "bb",
-    option4: "br",
-    rightAns: "b",
-  },
-  {
-    id: 5,
-    question: " HTML tag to make a text in italic",
-    option1: "Italic",
-    option2: "I",
-    option3: "It",
-    option4: "Ita",
-    rightAns: "I",
-  },
-  {
-    id: 6,
-    question: " CSS stands for -",
-    option1: "Cascade style sheet",
-    option2: "Color and style sheets",
-    option3: "Cascading style sheets",
-    option4: "Cascading style sheets",
-    rightAns: "Cascading style sheets",
-  },
-  {
-    id: 7,
-    question: " Are negative values allowed in padding property?",
-    option1: "Yes",
-    option2: "No",
-    option3: "Can't say",
-    option4: "May be",
-    rightAns: "No",
-  },
-  {
-    id: 8,
-    question: "Which of the following is not a type of combinator?",
-    option1: ">",
-    option2: "~",
-    option3: "+",
-    option4: "*",
-    rightAns: "*",
-  },
-  {
-    id: 9,
-    question: "Which type of CSS is used in the below code?",
-    option1: "Inline CSS",
-    option2: "Internal CSS",
-    option3: "It",
-    option4: "Ita",
-    rightAns: "Internal CSS",
-  },
-  {
-    id: 10,
-    question: "Which CSS roperty controls the font-size?",
-    option1: "font-size",
-    option2: "font-style",
-    option3: "text-size",
-    option4: "text-style",
-    rightAns: "font-style",
-  },
-];
+import allquestion from "./questions.json";
 
 function Asses() {
   const [zoomLevel, setZoomLevel] = useState(1);
   const [show, setShow] = useState(false);
   const dots = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const [show, setShow] = useState(false);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
+  const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
     const zoomInterval = setInterval(() => {
@@ -239,6 +151,54 @@ function Asses() {
 
   const handleShow = () => {
     setShow(true);
+  };
+
+  const questions = allquestion.questions;
+  console.log(questions);
+
+  const handleOptionClick = (optionIndex) => {
+    if (!showResult) {
+      setSelectedOptionIndex(optionIndex);
+      setShowResult(true);
+    }
+  };
+
+  const handleNextQuestion = () => {
+    if (selectedOptionIndex != null) {
+      setSelectedOptionIndex(null);
+      setShowResult(false);
+      setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
+    }
+  };
+
+  const renderOptions = () => {
+    const currentQuestion = questions[currentQuestionIndex];
+    return currentQuestion.options.map((option, index) => {
+      const isSelected = selectedOptionIndex === index;
+      const isCorrect = currentQuestion.correctAnswerIndex === index;
+      let optionClass = "cursor-pointer text-white";
+      if (showResult) {
+        if (isSelected && isCorrect) {
+          //select and correct
+          optionClass += " bg-green-500";
+        } else if (isSelected && !isCorrect) {
+          // select and wrong
+          optionClass += " bg-orange-500";
+        } else if (!isSelected && isCorrect) {
+          // not select and correct
+          optionClass += " bg-green-500";
+        }
+      }
+      return (
+        <li
+          key={index}
+          className={optionClass}
+          onClick={() => handleOptionClick(index)}
+        >
+          {option}
+        </li>
+      );
+    });
   };
 
   return (

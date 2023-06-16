@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import veg1 from "../assets/images/vegetation/vege1.png";
 import veg2 from "../assets/images/vegetation/vege2.png";
 import veg3 from "../assets/images/vegetation/vege3.png";
@@ -12,9 +12,19 @@ import { audioBtn, videoBtn } from "./Btns";
 import Footer from "./Footer";
 import MenuBtn from "./MenuBtn";
 
+import ReactAudioPlayer from "react-audio-player";
+import audio1 from "../assets/audio/audio1.mp3";
+import Audio from "./Audio";
+
 function Vegetation() {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayPause = () => {
+    setIsPlaying((prevState) => !prevState);
+  };
+
   return (
-    <div className="flex flex-col justify-between h-screen ">
+    <div className="flex flex-col justify-between h-auto ">
       <div className="w-screen flex justify-between">
         <h1 className="pt-3 pl-3 md:pt-14 md:pl-36 text-3xl">Vegetation</h1>
         <MenuBtn />
@@ -50,31 +60,33 @@ function Vegetation() {
           groundnuts.{" "}
         </p>
 
-        <div className="sm:flex sm:justify-center lg:justify-start">
+        <div className="z-0 mt-4 ml-4 sm:flex sm:justify-center lg:justify-start">
           <div
-            className="rounded-md shadow cursor-pointer"
+            className="rounded-md shadow cursor-pointer mr-4"
             data-bs-toggle="modal"
             data-bs-target="#videoModal"
           >
             {videoBtn()}
           </div>
-          <div
-            className="mt-3 sm:mt-0 sm:ml-3 cursor-pointer"
-            data-bs-toggle="modal"
-            data-bs-target="#audioModal"
-          >
-            {audioBtn()}
+          <div className="mt-3 sm:mt-0 sm:ml-3 cursor-pointer">
+            {/* {audioBtn()} */}
+
+            <div onClick={handlePlayPause}>
+              <Audio isPlaying={isPlaying} />
+            </div>
           </div>
         </div>
       </div>
 
       <div className="absolute bottom-5">
         <Footer
-          last={"/page/desert/sanddunes/"}
-          next={"/page/desert/trivia/"}
+          last={"/page/desert/habitat/"}
+          next={"/page/desert/sanddunes/"}
           hidePageBtn={false}
         />
       </div>
+      <VideoPlayer />
+      {isPlaying && <ReactAudioPlayer src={audio1} autoPlay />}
     </div>
   );
 }
