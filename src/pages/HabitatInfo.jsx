@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { videoBtn, audioBtn } from "../pages/Btns";
 import MenuBtn from "./MenuBtn";
@@ -14,6 +14,10 @@ import Gal8 from "../assets/images/gallery/gallery-8.png";
 import VideoPlayer from "./VideoPlayer";
 import AudioPlayer from "./AudioPlayer";
 import Footer from "./Footer";
+
+import audio1 from "../assets/audio/audio1.mp3";
+import Audio from "./Audio";
+import ReactAudioPlayer from "react-audio-player";
 
 const galleryImgs = [
   {
@@ -59,6 +63,12 @@ const galleryImgs = [
 ];
 
 const HabitatInfo = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayPause = () => {
+    setIsPlaying((prevState) => !prevState);
+  };
+
   return (
     <>
       <section className="text-gray-600 body-font h-[94.5vh] overflow-y-hidden">
@@ -98,22 +108,25 @@ const HabitatInfo = () => {
               </ul>
             </p>
             <div className="flex lg:flex-row md:flex-col relative bottom-4">
-              <button
-                type="button"
-                className="inline-flex py-3 px-5 items-center focus:outline-none"
+              <div
+                className="rounded-md shadow cursor-pointer mr-4"
                 data-bs-toggle="modal"
                 data-bs-target="#videoModal"
               >
                 {videoBtn()}
-              </button>
-              <button
+              </div>
+              {/* <button
                 type="button"
                 className="inline-flex py-3 px-5 items-center focus:outline-none"
                 data-bs-toggle="modal"
                 data-bs-target="#audioModal"
               >
                 {audioBtn()}
-              </button>
+              </button> */}
+
+              <div onClick={handlePlayPause}>
+                <Audio isPlaying={isPlaying} />
+              </div>
             </div>
           </div>
           <div className="lg:max-w-md lg:w-full pb-80 md:w-1/2 w-5/6">
@@ -133,12 +146,13 @@ const HabitatInfo = () => {
           </div>
         </div>
         <VideoPlayer />
-        <AudioPlayer />
+        {/* <AudioPlayer /> */}
+        {isPlaying && <ReactAudioPlayer src={audio1} autoPlay />}
       </section>
-      <div className="relative bottom-9">
+      <div className="absolute bottom-5">
         <Footer
-          last={"/page/desert/types/"}
-          next={"/page/desert/oasis/info/"}
+          last={"/page/desert/habitat/"}
+          next={"/page/desert/sanddunes/"}
           hidePageBtn={false}
         />
       </div>

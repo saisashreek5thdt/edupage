@@ -130,9 +130,14 @@ import newbg from "../assets/assess/newbg.svg";
 import qBanner from "../assets/assess/questions-banner.svg";
 import nextImage from "../assets/assess/next-img.svg";
 
+import allquestion from "./questions.json";
+
 function Asses() {
   const [zoomLevel, setZoomLevel] = useState(1);
   const [show, setShow] = useState(false);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
+  const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
     const zoomInterval = setInterval(() => {
@@ -144,6 +149,54 @@ function Asses() {
 
   const handleShow = () => {
     setShow(true);
+  };
+
+  const questions = allquestion.questions;
+  console.log(questions);
+
+  const handleOptionClick = (optionIndex) => {
+    if (!showResult) {
+      setSelectedOptionIndex(optionIndex);
+      setShowResult(true);
+    }
+  };
+
+  const handleNextQuestion = () => {
+    if (selectedOptionIndex != null) {
+      setSelectedOptionIndex(null);
+      setShowResult(false);
+      setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
+    }
+  };
+
+  const renderOptions = () => {
+    const currentQuestion = questions[currentQuestionIndex];
+    return currentQuestion.options.map((option, index) => {
+      const isSelected = selectedOptionIndex === index;
+      const isCorrect = currentQuestion.correctAnswerIndex === index;
+      let optionClass = "cursor-pointer text-white";
+      if (showResult) {
+        if (isSelected && isCorrect) {
+          //select and correct
+          optionClass += " bg-green-500";
+        } else if (isSelected && !isCorrect) {
+          // select and wrong
+          optionClass += " bg-orange-500";
+        } else if (!isSelected && isCorrect) {
+          // not select and correct
+          optionClass += " bg-green-500";
+        }
+      }
+      return (
+        <li
+          key={index}
+          className={optionClass}
+          onClick={() => handleOptionClick(index)}
+        >
+          {option}
+        </li>
+      );
+    });
   };
 
   return (
@@ -173,17 +226,15 @@ function Asses() {
             <img
               src={nextImage}
               alt="Next Button"
+              onClick={handleNextQuestion}
               className={`object-contain w-36 h-36 m-3 rounded-full transition-transform duration-1000`}
             />
           </div>
           <div className="absolute top-20">
-            <h2 className="text-3xl text-white">Question Title</h2>
-            <ul className="text-white">
-              <li>Option 1</li>
-              <li>Option 2</li>
-              <li>Option 3</li>
-              <li>Option 4</li>
-            </ul>
+            <h2 className="text-3xl text-white">
+              {questions[currentQuestionIndex].question}
+            </h2>
+            <ul className="text-white">{renderOptions()}</ul>
           </div>
         </div>
       ) : (

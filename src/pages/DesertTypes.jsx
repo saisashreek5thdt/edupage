@@ -93,11 +93,11 @@ const DesertTypes = () => {
             />
           )}
         </div>
-        <div className="relative top-6">
+        <div className="absolute bottom-5">
           <Footer
-            last={"/page/desert/info/"}
-            next={"/page/desert/habitat/"}
-            firstPage={false}
+            last={"/page/desert/habitat/"}
+            next={"/page/desert/sanddunes/"}
+            hidePageBtn={false}
           />
         </div>
       </section>

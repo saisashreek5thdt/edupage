@@ -9,7 +9,7 @@ const Menu1 = [
   {
     id: 1,
     name: "Assessment",
-    href: "/page/desert/info/",
+    href: "/page/desert/assesment",
     icon1: img2,
     icon2: "",
   },

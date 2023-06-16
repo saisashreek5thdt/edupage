@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Player } from "video-react";
 import video1 from "../assets/audio/Desert_Video.mp4";
 
 const VideoPlayer = () => {
+  const playerRef = useRef(null);
+
+  useEffect(() => {
+    const videoModal = document.getElementById("videoModal");
+    const closeButton = videoModal.querySelector(".btn-close");
+
+    const closeModal = () => {
+      playerRef.current.pause();
+      playerRef.current.seek(0);
+    };
+
+    closeButton.addEventListener("click", closeModal);
+    videoModal.addEventListener("hidden.bs.modal", closeModal);
+
+    return () => {
+      closeButton.removeEventListener("click", closeModal);
+      videoModal.removeEventListener("hidden.bs.modal", closeModal);
+    };
+  }, []);
+
   return (
     <>
       <div
@@ -29,7 +49,7 @@ const VideoPlayer = () => {
               ></button>
             </div>
             <div className="modal-body relative p-4">
-              <Player>
+              <Player ref={playerRef}>
                 <source src={video1} />
               </Player>
             </div>
