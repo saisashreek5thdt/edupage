@@ -11,6 +11,7 @@ import Sand2 from "../assets/images/sand-dunes/sand2.jpg";
 import Sand3 from "../assets/images/sand-dunes/sand3.jpg";
 import Sand4 from "../assets/images/sand-dunes/sand4.jpg";
 import Sand5 from "../assets/images/sand-dunes/sand5.jpg";
+import Sand6 from "../assets/images/sand-dunes/vertical-shot-patterns-beautiful-sand-dunes-desert.png";
 import Footer from "./Footer";
 
 const dunesImgs = [
@@ -37,6 +38,11 @@ const dunesImgs = [
   {
     id: 5,
     imgSrc: Sand5,
+    alt: "Sand Dunes",
+  },
+  {
+    id: 6,
+    imgSrc: Sand6,
     alt: "Sand Dunes",
   },
 ];
@@ -178,7 +184,7 @@ const SandDunes = () => {
             <div className="grid grid-cols-2 pb-2 md:grid-cols-2 grid-rows-2 sm:gap-3 lg:gap-1 lg:pl-32 lg:mr-8">
               {dunesImgs.map((imgs) => (
                 <img
-                  className="w-72 h-52 object-cover object-center rounded shadow-lg"
+                  className="w-72 h-40 object-cover object-center rounded shadow-lg"
                   alt={imgs.alt}
                   src={imgs.imgSrc}
                   key={imgs.id}
@@ -194,7 +200,7 @@ const SandDunes = () => {
 
       <VideoPlayer />
       <AudioPlayer />
-      <div>
+      <div className="absolute bottom-5">
         <Footer
           last={"/page/desert/oasis/info/"}
           next={"/page/desert/vegetation/"}

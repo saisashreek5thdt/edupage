@@ -77,7 +77,7 @@ const DesertInfo = () => {
       </section>
       <VideoPlayer />
       <AudioPlayer />
-      <div className="relative bottom-4">
+      <div className="absolute bottom-5">
         <Footer
           setOpen={setOpen}
           last={""}

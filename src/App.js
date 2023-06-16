@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import img1 from "./assets/icons/Component 74 – 1.png";
 import img2 from "./assets/icons/Component61.png";
 import img3 from "./assets/icons/Component 75 – 1.png";
+import { Link } from "react-router-dom";
 import Footer from "./pages/Footer";
 import { useNavigate } from "react-router-dom";
 
@@ -98,12 +99,12 @@ const App = () => {
                       key={menu.name}
                       className="w-64 h-full pl-3 justify-center text-xl md:my-0 my-7 rotate-180 pr-6 text-end"
                     >
-                      <a
-                        href={menu.href}
-                        className="relative top-4 left-1 text-white  "
+                      <Link
+                        to={menu.href}
+                        className="relative top-4 left-1 text-white hover:text-black hover:bg-transparent  "
                       >
                         {menu.name}
-                      </a>
+                      </Link>
                     </li>
                   </div>
                   <div className="flex  bg-blue-400 pr-3 py-2 rounded-r-full">
@@ -134,12 +135,12 @@ const App = () => {
                       key={menu.name}
                       className=" w-56 h-full pl-3   justify-center text-xl md:my-0 my-7  "
                     >
-                      <a
-                        href={menu.href}
-                        className="relative top-4 left-1 text-white "
+                      <Link
+                        to={menu.href}
+                        className="relative top-4 left-1 hover:text-black hover:bg-transparent text-white "
                       >
                         {menu.name}
-                      </a>
+                      </Link>
                     </li>
                   </div>
                   <div className="flex bg-blue-400 pr-3 py-2 rounded-r-full">
@@ -160,7 +161,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className="relative bottom-2">
+      <div className="absolute bottom-5">
         <Footer
           isIndexPage={isIndexPage}
           setIsIndexPage={setIsIndexPage}

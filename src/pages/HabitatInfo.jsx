@@ -135,7 +135,7 @@ const HabitatInfo = () => {
         <VideoPlayer />
         <AudioPlayer />
       </section>
-      <div className="relative bottom-9">
+      <div className="absolute bottom-5">
         <Footer
           last={"/page/desert/types/"}
           next={"/page/desert/oasis/info/"}

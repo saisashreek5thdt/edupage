@@ -75,7 +75,7 @@ const ModalBox = ({ desertTypes, setDesertTypes }) => {
   return (
     <div
       onClick={handleClick}
-      className="absolute top-0  right-0 w-full h-full mb-56 flex gap-24 justify-center bg-black/[.5]     dismiss overflow-y-scroll pb-10"
+      className="absolute z-50 top-0  right-0 w-full h-full mb-56 flex gap-24 justify-center bg-black/[.7]     dismiss overflow-y-scroll pb-10"
     >
       <div className="w-min h2 z-40  ">
         <h4 className="bg-slate-100 w-[94.7%] mt-14 p-4 relative top-7 left-3  text-center text-3xl text-blue-400 ">

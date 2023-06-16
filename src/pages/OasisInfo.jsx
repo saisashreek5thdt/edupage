@@ -83,7 +83,7 @@ const OasisInfo = () => {
       </section>
       <VideoPlayer />
       <AudioPlayer />
-      <div className="relative bottom-6">
+      <div className="absolute bottom-5">
         <Footer
           last={"/page/desert/habitat/"}
           next={"/page/desert/sanddunes/"}
