@@ -71,12 +71,13 @@ const ModalBox = ({ desertTypes, setDesertTypes }) => {
       description: "Vegetation is scattered with needle like leaves.",
     },
   ];
-  console.log(coldDesertPara);
-  console.log(hotDesertPara);
 
   return (
-    <div className="absolute top-0  right-0 w-full h-full mb-56 flex gap-24 justify-center bg-black/[.5]     dismiss overflow-y-scroll pb-10">
-      <div className="w-min h2  ">
+    <div
+      onClick={handleClick}
+      className="absolute top-0  right-0 w-full h-full mb-56 flex gap-24 justify-center bg-black/[.5]     dismiss overflow-y-scroll pb-10"
+    >
+      <div className="w-min h2 z-40  ">
         <h4 className="bg-slate-100 w-[94.7%] mt-14 p-4 relative top-7 left-3  text-center text-3xl text-blue-400 ">
           Hot Desert
         </h4>
@@ -92,7 +93,7 @@ const ModalBox = ({ desertTypes, setDesertTypes }) => {
         ))}
         <h2 className="py-10 px-3">{""}</h2>
       </div>
-      <div className="w-min pb h2">
+      <div className="w-min pb h2 z-40">
         <h4 className="bg-slate-100 w-[94.7%] mt-14 p-4 relative top-7 left-3  text-center text-3xl text-blue-400 ">
           Cold Desert
         </h4>

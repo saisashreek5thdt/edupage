@@ -8,6 +8,7 @@ import didYouKnow from "../assets/icons/Group 7345.png";
 import MenuBtn from "./MenuBtn";
 import VideoPlayer from "./VideoPlayer";
 import OasisModalBox from "./OasisModalBox";
+import Footer from "./Footer";
 
 const OasisInfo = () => {
   const [clickedImg, setClickedImg] = useState(false);
@@ -17,9 +18,9 @@ const OasisInfo = () => {
   };
   return (
     <>
-      <MenuBtn />
-      <section className="text-gray-600 body-font h-[582px] overflow-y-hidden">
-        <div className=" container mx-auto flex px-24  md:flex-row flex-col items-center">
+      <section className="text-gray-600 body-font h-[632px] overflow-y-hidden">
+        <MenuBtn />
+        <div className=" h-[85vh] mx-auto flex px-24  md:flex-row flex-col items-center">
           <div className="lg:flex-grow lg:w-5 md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left  md:mb-0 items-center text-center">
             <h1 className="title-font font-normal sm:text-4xl text-3xl mb-4  font-Linotte text-gray-900">
               Oasis
@@ -45,7 +46,7 @@ const OasisInfo = () => {
                 <li>&emsp; &emsp; Sonoran Desert – USA/Mexico</li>
               </ol>
             </p>
-            <div className="flex lg:flex-row md:flex-col">
+            <div className="flex relative bottom-4 lg:flex-row md:flex-col">
               <button
                 type="button"
                 className="inline-flex py-3 px-5 items-center focus:outline-none"
@@ -64,14 +65,14 @@ const OasisInfo = () => {
               </button>
             </div>
           </div>
-          <div className=" relative h-6 bottom-72 lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+          <div className=" relative h-4 bottom-72 left-8 lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
             <img
-              className="object-cover object-center rounded"
+              className="object-cover h-80 object-center rounded"
               alt="desert-info"
               src={DesertBg4}
             />
             <img
-              className=" cursor-pointer relative object-cover h-52 top-8 object-center rounded"
+              className=" cursor-pointer relative object-cover h-52 top-3 object-center rounded"
               alt="desert-info"
               onClickCapture={() => handleClick()}
               src={didYouKnow}
@@ -82,6 +83,13 @@ const OasisInfo = () => {
       </section>
       <VideoPlayer />
       <AudioPlayer />
+      <div className="relative bottom-6">
+        <Footer
+          last={"/page/desert/habitat/"}
+          next={"/page/desert/sanddunes/"}
+          hidePageBtn={false}
+        />
+      </div>
     </>
   );
 };

@@ -13,6 +13,7 @@ import Gal7 from "../assets/images/gallery/gallery-7.png";
 import Gal8 from "../assets/images/gallery/gallery-8.png";
 import VideoPlayer from "./VideoPlayer";
 import AudioPlayer from "./AudioPlayer";
+import Footer from "./Footer";
 
 const galleryImgs = [
   {
@@ -60,7 +61,7 @@ const galleryImgs = [
 const HabitatInfo = () => {
   return (
     <>
-      <section className="text-gray-600 body-font h-screen overflow-y-hidden">
+      <section className="text-gray-600 body-font h-[94.5vh] overflow-y-hidden">
         <MenuBtn />
         <div className="container  mx-auto flex px-5 pb-4 md:flex-row flex-col items-center">
           <div className="lg:flex-grow lg:relative lg:bottom-28 md:w-1/2 lg:pr-36 md:pr-16 flex flex-col md:items-start md:text-left pb-20 md:mb-0 items-center text-center">
@@ -96,7 +97,7 @@ const HabitatInfo = () => {
                 </li>
               </ul>
             </p>
-            <div className="flex lg:flex-row md:flex-col">
+            <div className="flex lg:flex-row md:flex-col relative bottom-4">
               <button
                 type="button"
                 className="inline-flex py-3 px-5 items-center focus:outline-none"
@@ -115,8 +116,8 @@ const HabitatInfo = () => {
               </button>
             </div>
           </div>
-          <div className="lg:max-w-lg lg:w-full pb-80 md:w-1/2 w-5/6">
-            <div className="grid grid-cols-2 pb-2 md:grid-cols-2 grid-rows-2 sm:gap-3 lg:gap-1 lg:pl-32 lg:mr-8">
+          <div className="lg:max-w-md lg:w-full pb-80 md:w-1/2 w-5/6">
+            <div className="grid grid-cols-2 pb-2 md:grid-cols-2 grid-rows-2 sm:gap-3 lg:gap-1 lg:pl-36 lg:mr-2">
               {galleryImgs.map((imgs) => (
                 <img
                   className="w-40  object-cover object-center rounded"
@@ -126,14 +127,21 @@ const HabitatInfo = () => {
                 />
               ))}
             </div>
-            <button className="bg-blue-400 relative left-[135px] w-[325px] py-3 px-4  text-white font-medium mt-auto">
+            <button className="bg-blue-400 relative left-[150px] w-[285px] py-3 px-4  text-white font-medium mt-auto">
               Desert Animals and Plants
             </button>
           </div>
         </div>
+        <VideoPlayer />
+        <AudioPlayer />
       </section>
-      <VideoPlayer />
-      <AudioPlayer />
+      <div className="relative bottom-9">
+        <Footer
+          last={"/page/desert/types/"}
+          next={"/page/desert/oasis/info/"}
+          hidePageBtn={false}
+        />
+      </div>
     </>
   );
 };

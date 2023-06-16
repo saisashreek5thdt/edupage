@@ -9,6 +9,7 @@ import clickHereBtn from "../assets/icons/Group_7344.png";
 import MenuBtn from "./MenuBtn";
 import VideoPlayer from "./VideoPlayer";
 import ModalBox from "./ModalBox";
+import Footer from "./Footer";
 
 const DesertTypes = () => {
   const [desertTypes, setDesertTypes] = useState("");
@@ -19,10 +20,10 @@ const DesertTypes = () => {
   return (
     <>
       <MenuBtn />
-      <section className=" h-[100vh] text-gray-600 body-font ">
-        <div className="container mx-auto flex px-20   md:flex-row flex-col items-center">
+      <section className="  text-gray-600  ">
+        <div className="h-[75vh] mx-auto flex px-20   md:flex-row flex-col items-center">
           <div className="relative lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col     md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="title-font font-normal sm:text-4xl text-3xl mb-9  font-Linotte text-gray-900 ">
+            <h1 className="title-font font-normal sm:text-3xl text-3xl mb-9  font-Linotte text-gray-900 ">
               Types of Deserts
             </h1>
             <p className="mb-8 leading-relaxed font-Linotte font-medium text-left">
@@ -75,12 +76,12 @@ const DesertTypes = () => {
           </div>
           <div className="flex sm:flex-row md:flex-col">
             <img
-              className="object-cover object-center rounded h-auto md:h-72"
+              className="object-cover object-center rounded h-auto md:h-64"
               alt="desert-info"
               src={DesertType1}
             />
             <img
-              className="object-cover object-center rounded h-auto md:h-72"
+              className="object-cover object-center rounded h-auto md:h-64"
               alt="desert-info"
               src={DesertType2}
             />
@@ -91,6 +92,13 @@ const DesertTypes = () => {
               setDesertTypes={setDesertTypes}
             />
           )}
+        </div>
+        <div className="relative top-6">
+          <Footer
+            last={"/page/desert/info/"}
+            next={"/page/desert/habitat/"}
+            firstPage={false}
+          />
         </div>
       </section>
       {/* 
@@ -189,10 +197,10 @@ const DesertTypes = () => {
             </div>
               */}
 
-            <VideoPlayer />
-            <AudioPlayer />
-        </>
-    );
+      <VideoPlayer />
+      <AudioPlayer />
+    </>
+  );
 };
 
 export default DesertTypes;
