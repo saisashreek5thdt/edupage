@@ -16,6 +16,7 @@ import {
   Vegetation,
   Trivia,
 } from "./pages";
+import Asses from "./pages/Asses";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -31,6 +32,7 @@ root.render(
       <Route path="/page/desert/sanddunes/" element={<SandDunes />} />
       <Route path="/page/desert/vegetation/" element={<Vegetation />} />
       <Route path="/page/desert/trivia/" element={<Trivia />} />
+      <Route path="/asses" element={<Asses />} />
     </Routes>
   </BrowserRouter>
 );

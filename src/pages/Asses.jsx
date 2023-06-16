@@ -1,0 +1,178 @@
+// import React from "react";
+// import userIcon from "../assets/images/user/userIcon.png";
+
+// import startbutton from "../assets/assess/start-button.svg";
+// import bgImage from "../assets/assess/bg-image.svg";
+
+// function Asses() {
+//   return (
+//     <div
+//       className="bg-slate-500 w-screen h-screen"
+//       style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
+//     >
+//       <div className="w-screen flex justify-between h-44 ">
+//         <h1 className="pt-4 pl-4 md:pt-16 md:pl-16 text-2xl">
+//           Assess Your Mindset
+//         </h1>
+//         <img
+//           src={userIcon}
+//           alt="Current Image"
+//           className="object-contain w-16 h-16 m-3 rounded-full mr-10"
+//         />
+//       </div>
+
+//       <div className="flex w-screen justify-center items-center flex-col h-72 ">
+//         <div className="bg-gray-200 text-center pt-10 pb-10 text-2xl rounded-xl items-center flex flex-col w-fit h-700 h-screen shadow-xl">
+//           <h1>GROWING A GROWTH MINDSET</h1>
+//           <h3 className="pt-6 text-2xl">
+//             Are You Ready for a Positivity Change
+//           </h3>
+//           <h3 className="pt-6 text-xl text-center w-3/4">
+//             Our mindset decides if our character, intelligent and creative
+//             abilities are either are either fixed or can be changed
+//           </h3>
+//           <img
+//             src={startbutton}
+//             alt="startbutton"
+//             className="object-contain absolute w-40 h-40 m-3 rounded-full mr-10 top-1/2"
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Asses;
+// import React, { useEffect, useState } from "react";
+// import userIcon from "../assets/images/user/userIcon.png";
+// import startbutton from "../assets/assess/start-button.svg";
+// import bgImage from "../assets/assess/bg-image.svg";
+
+// import newbg from "../assets/assess/newbg.svg";
+
+// function Asses() {
+//   const [zoomLevel, setZoomLevel] = useState(1);
+
+//   useEffect(() => {
+//     const zoomInterval = setInterval(() => {
+//       setZoomLevel((prevZoomLevel) => (prevZoomLevel === 1 ? 1.2 : 1));
+//     }, 2000);
+
+//     return () => clearInterval(zoomInterval);
+//   }, []);
+
+//   return (
+//     <div
+//       className="bg-slate-500 w-screen h-screen"
+//       style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
+//     >
+//       <div className="w-screen flex justify-between h-44 ">
+//         <h1 className="pt-4 pl-4 md:pt-16 md:pl-16 text-2xl">
+//           Assess Your Mindset
+//         </h1>
+//         <img
+//           src={userIcon}
+//           alt="Current Image"
+//           className="object-contain w-16 h-16 m-3 rounded-full mr-10"
+//         />
+//       </div>
+//       {/*
+//       <div className="flex w-screen justify-center items-center flex-col h-80 ">
+//         <div className="bg-white text-center pt-10 pb-20 text-2xl rounded-xl items-center flex flex-col w-fit h-700 h-screen shadow-xl relative">
+//           <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+//             <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 ">
+//               <div className="h-6 w-96 bg-indexLine rounded-xl"></div>
+//             </div>
+//           </div>
+
+//           <h1>GROWING A GROWTH MINDSET</h1>
+//           <h3 className="pt-6 text-2xl">
+//             Are You Ready for a Positivity Change
+//           </h3>
+//           <h3 className="pt-6 text-xl text-center w-3/4">
+//             Our mindset decides if our character, intelligence, and creative
+//             abilities are fixed or can be changed.
+//           </h3>
+//           <div className="absolute top-56">
+//             <img
+//               src={startbutton}
+//               alt="startbutton"
+//               className="object-contain w-40 h-40 m-3 rounded-full"
+//             />
+//           </div>
+//         </div> */}
+
+//       <div className="flex w-screen justify-center items-center flex-col h-80 relative">
+//         <img
+//           src={newbg}
+//           alt="Current Image"
+//           className="object-full w-800 h-auto m-3"
+//         />
+//         <div className="absolute top-56">
+//           <img
+//             src={startbutton}
+//             alt="startbutton"
+//             className={`object-contain w-40 h-40 m-3 rounded-full transform scale-${zoomLevel}`}
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Asses;
+
+import React, { useEffect, useState } from "react";
+import userIcon from "../assets/images/user/userIcon.png";
+import startbutton from "../assets/assess/start-button.svg";
+import bgImage from "../assets/assess/bg-image.svg";
+import newbg from "../assets/assess/newbg.svg";
+
+function Asses() {
+  const [zoomLevel, setZoomLevel] = useState(1);
+
+  useEffect(() => {
+    const zoomInterval = setInterval(() => {
+      setZoomLevel((prevZoomLevel) => (prevZoomLevel === 1 ? 1.05 : 1));
+    }, 500);
+
+    return () => clearInterval(zoomInterval);
+  }, []);
+
+  return (
+    <div
+      className="bg-slate-500 w-screen h-screen"
+      style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
+    >
+      <div className="w-screen flex justify-between h-44 ">
+        <h1 className="pt-4 pl-4 md:pt-16 md:pl-16 text-2xl">
+          Assess Your Mindset
+        </h1>
+        <img
+          src={userIcon}
+          alt="User Icon"
+          className="object-contain w-16 h-16 m-3 rounded-full mr-10"
+        />
+      </div>
+
+      <div className="flex w-screen justify-center items-center flex-col h-80 relative">
+        <img
+          src={newbg}
+          alt="Current Image"
+          className="object-full w-800 h-auto m-3"
+        />
+        <div className="absolute top-60">
+          <img
+            src={startbutton}
+            alt="Start Button"
+            className={`object-contain w-36 h-36 m-3 rounded-full transition-transform duration-1000 ${
+              zoomLevel === 1.05 ? "scale-125" : ""
+            }`}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Asses;
