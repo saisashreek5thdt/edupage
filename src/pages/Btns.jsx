@@ -6,7 +6,7 @@ const videoBtn = () => {
       <svg
         id="VideoBtn"
         xmlns="http://www.w3.org/2000/svg"
-        width="234.997"
+        width="154.997"
         height="70.465"
         viewBox="0 0 234.997 70.465"
       >
@@ -119,7 +119,7 @@ const audioBtn = () => {
       <svg
         id="AudioBtn"
         xmlns="http://www.w3.org/2000/svg"
-        width="234.997"
+        width="154.997"
         height="70.465"
         viewBox="0 0 234.997 70.465"
       >

@@ -10,27 +10,24 @@ import VideoPlayer from "./VideoPlayer";
 import AudioPlayer from "./AudioPlayer";
 import { audioBtn, videoBtn } from "./Btns";
 import Footer from "./Footer";
+import MenuBtn from "./MenuBtn";
 
 function Vegetation() {
   return (
     <div className="flex flex-col justify-between h-screen ">
       <div className="w-screen flex justify-between">
-        <h1 className="pt-3 pl-3 md:pt-14 md:pl-16 text-3xl">Vegetation</h1>
-        <img
-          src="https://w7.pngwing.com/pngs/522/396/png-transparent-computer-icons-profile-miscellaneous-logo-profile.png"
-          alt="Current Image"
-          className="object-contain w-12 h-12 m-2 rounded-full"
-        />
+        <h1 className="pt-3 pl-3 md:pt-14 md:pl-36 text-3xl">Vegetation</h1>
+        <MenuBtn />
       </div>
 
-      <div className="ml-14 mr-14">
-        <div className="flex">
+      <div className="mx-32 absolute bottom-24">
+        <div className="flex ">
           <img src={veg1} alt="Current Image" className="w-1/3 p-4" />{" "}
           <img src={veg2} alt="Current Image" className="w-1/3 p-4" />{" "}
           <img src={veg3} alt="Current Image" className="w-1/3 p-4" />
         </div>
 
-        <p className="text-xl pl-4 pt-3 text-gray-500">
+        <p className="text-md pl-4 pt-2 text-gray-500">
           Desert environments are so dry that they support only extremely sparse
           vegetation; trees are usually absent and, under normal climatic
           conditions, shrubs or herbaceous plants provide only very incomplete
@@ -42,7 +39,7 @@ function Vegetation() {
 
         {/* <br /> */}
 
-        <p className="text-xl pl-4  pt-3 text-gray-500">
+        <p className="text-md pl-4  pt-3 text-gray-500">
           Desert vegetation is found in Central and South-West Asia. Arabian
           desert, Thar desert, Gobi desert are some of the deserts of Asia.
           Cacti and Acacia are the most common vegetation found in desert
@@ -71,8 +68,12 @@ function Vegetation() {
         </div>
       </div>
 
-      <div>
-        <Footer />
+      <div className="absolute bottom-5">
+        <Footer
+          last={"/page/desert/sanddunes/"}
+          next={"/page/desert/trivia/"}
+          hidePageBtn={false}
+        />
       </div>
     </div>
   );
