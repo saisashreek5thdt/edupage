@@ -97,7 +97,6 @@ const OasisInfo = () => {
         <Footer
           last={"/page/desert/habitat/"}
           next={"/page/desert/sanddunes/"}
-          hidePageBtn={false}
         />
       </div>
     </>

@@ -76,7 +76,7 @@ const Menu2 = [
 ];
 
 const App = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [isIndexPage, setIsIndexPage] = useState(true);
 
   return (

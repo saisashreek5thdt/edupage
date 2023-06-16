@@ -30,11 +30,11 @@ function Vegetation() {
         <MenuBtn />
       </div>
 
-      <div className="mx-32 absolute bottom-24">
-        <div className="flex ">
-          <img src={veg1} alt="Current Image" className="w-1/3 p-4" />{" "}
-          <img src={veg2} alt="Current Image" className="w-1/3 p-4" />{" "}
-          <img src={veg3} alt="Current Image" className="w-1/3 p-4" />
+      <div className="mx-32 absolute bottom-14">
+        <div className="flex  ">
+          <img src={veg1} alt="Current Image" className="w-1/3 p-4 mb-2" />{" "}
+          <img src={veg2} alt="Current Image" className="w-1/3 p-4 mb-2" />{" "}
+          <img src={veg3} alt="Current Image" className="w-1/3 p-4 mb-2" />
         </div>
 
         <p className="text-md pl-4 pt-2 text-gray-500">
@@ -80,9 +80,8 @@ function Vegetation() {
 
       <div className="absolute bottom-5">
         <Footer
-          last={"/page/desert/habitat/"}
-          next={"/page/desert/sanddunes/"}
-          hidePageBtn={false}
+          last={"/page/desert/sanddunes/"}
+          next={"/page/desert/trivia/"}
         />
       </div>
       <VideoPlayer />

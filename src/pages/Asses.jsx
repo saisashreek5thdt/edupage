@@ -119,7 +119,6 @@
 //     </div>
 //   );
 // }
-
 // export default Asses;
 import React, { useEffect, useState } from "react";
 import userIcon from "../assets/images/user/userIcon.png";
@@ -134,7 +133,6 @@ import allquestion from "./questions.json";
 
 function Asses() {
   const [zoomLevel, setZoomLevel] = useState(1);
-  const [show, setShow] = useState(false);
   const dots = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   const [show, setShow] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -190,13 +188,21 @@ function Asses() {
         }
       }
       return (
-        <li
-          key={index}
-          className={optionClass}
-          onClick={() => handleOptionClick(index)}
-        >
-          {option}
-        </li>
+        <>
+          <label
+            className={`bg-white text-gray-900 rounded-full shadow-xl p-2 px-4 ${optionClass} `}
+          >
+            <input
+              type="radio"
+              className={optionClass}
+              id="radio"
+              key={index}
+              name="option"
+              onClick={() => handleOptionClick(index)}
+            />
+            <span className="pl-4 text-md">{option}</span>
+          </label>
+        </>
       );
     });
   };
@@ -216,69 +222,39 @@ function Asses() {
       </div>
 
       {show ? (
-        <div className="flex w-screen justify-center items-center flex-col h-96 relative ml-10 mt-7">
-          <div className=" flex absolute bottom-[425px] left-[475px]">
-            {dots.map(() => (
-              <p className="mx-2 p-2 rounded-full shadow-2xl bg-green-500" />
-            ))}
-          </div>
+        <div className="flex w-screen justify-center items-center flex-col h-96 relative ml-14 top-4">
           <img
             src={qBanner}
             alt="Current Image"
-            className="object-full w-800 h-auto m-3 align-middle"
+            className="object-full w-800 h-auto m-3"
           />
-          <div className="absolute top-[210px] rounded-full left-[555px]">
+          <div className="absolute top-52 left-[557px]">
             <img
               src={nextImage}
               alt="Next Button"
-              className={`object-contain w-36 h-36 m-3 transition-transform duration-1000`}
+              onClick={handleNextQuestion}
+              className={`object-contain w-36 h-36 m-3 rounded-full transition-transform duration-1000`}
             />
           </div>
-          <div className="absolute top-[-25px] flex flex-col left-[330px]  w-[44%]">
-            <h2 className="text-2xl  p-4  text-gray-500 ">
-              1. Are negative values allowed in padding property?
+          <div className=" flex absolute bottom-[413px] left-[475px]">
+            {dots.map((i) => (
+              <p
+                className={`mx-2 p-2 rounded-full z-50 shadow-2xl ${
+                  questions[currentQuestionIndex].id === i + 1
+                    ? "bg-green-500"
+                    : "bg-white"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex flex-col  absolute w-[600px] top-2 left-[340px] ">
+            <h2 className="text-3xl text-center text-gray-700 pb-8">
+              {questions[currentQuestionIndex].id}.{" "}
+              {questions[currentQuestionIndex].question}
             </h2>
-            <div className="text-gray-600 grid grid-cols-2 gap-6 pt-5">
-              <label className="bg-white pb-3 rounded-full shadow-xl p-2 px-4">
-                <input
-                  type="radio"
-                  className="shadow-xl "
-                  id="radio"
-                  name="option"
-                />
-                <span className="pl-4 text-md">Option 1</span>
-              </label>
-
-              <label className="bg-white pb-3 rounded-full shadow-xl p-2 px-4">
-                <input
-                  type="radio"
-                  className="shadow-xl "
-                  id="radio"
-                  name="option"
-                />
-                <span className="pl-4 text-md">Option 2</span>
-              </label>
-
-              <label className="bg-white rounded-full shadow-xl p-2 px-4">
-                <input
-                  type="radio"
-                  className="shadow-xl "
-                  id="radio"
-                  name="option"
-                />
-                <span className="pl-4 text-md">Option 3</span>
-              </label>
-
-              <label className="bg-white rounded-full shadow-xl p-2 px-4">
-                <input
-                  type="radio"
-                  className="shadow-xl "
-                  id="radio"
-                  name="option"
-                />
-                <span className="pl-4 text-md">Option 4</span>
-              </label>
-            </div>
+            <ul className="text-gray-600 grid grid-cols-2 gap-8">
+              {renderOptions()}
+            </ul>
           </div>
         </div>
       ) : (
@@ -288,7 +264,7 @@ function Asses() {
             alt="Current Image"
             className="object-full w-800 h-auto m-3"
           />
-          <div className="absolute top-60">
+          <div className="absolute top-60 left-[615px]">
             <img
               src={startbutton}
               alt="Start Button"
