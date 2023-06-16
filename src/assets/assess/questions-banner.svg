@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1016.839" height="694.227" viewBox="0 0 1016.839 694.227">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.166" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#9a87d8"/>
+      <stop offset="0.571" stop-color="#4f466f"/>
+      <stop offset="1" stop-color="#4d446c"/>
+    </linearGradient>
+    <filter id="Rectangle_425" x="0" y="0" width="1016.839" height="452.242" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <radialGradient id="radial-gradient" cx="0" cy="0.022" r="2.213" gradientTransform="matrix(0.47, 0.883, -0.415, 0.221, 0.009, 0.017)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fafafa"/>
+      <stop offset="1" stop-color="#43baff"/>
+    </radialGradient>
+    <filter id="Rectangle_426" x="38.891" y="105.723" width="939.058" height="452.242" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-2"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <radialGradient id="radial-gradient-2" cx="0.5" cy="0.5" r="1.011" gradientTransform="matrix(1, 0, 0, 7.133, 0, -3.067)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#bcadad"/>
+      <stop offset="1" stop-color="#3b3535"/>
+    </radialGradient>
+    <filter id="Rectangle_427" x="256.488" y="89.149" width="503.863" height="63.147" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-3"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_2372" data-name="Group 2372" transform="translate(-454.349 -191.519)">
+    <g id="Group_2371" data-name="Group 2371" transform="translate(77.524 76.415)">
+      <path id="Path_9531" data-name="Path 9531" d="M603.229,504.639a142.8,142.8,0,1,1,142.8-142.8,142.8,142.8,0,0,1-142.8,142.8" transform="translate(279.015 303.691)" fill="none" stroke="#37a0dc" stroke-miterlimit="10" stroke-width="2"/>
+      <g transform="matrix(1, 0, 0, 1, 376.82, 115.1)" filter="url(#Rectangle_425)">
+        <rect id="Rectangle_425-2" data-name="Rectangle 425" width="986.839" height="422.242" rx="10.074" transform="translate(12 12)" fill="url(#linear-gradient)"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 376.82, 115.1)" filter="url(#Rectangle_426)">
+        <rect id="Rectangle_426-2" data-name="Rectangle 426" width="909.058" height="422.242" rx="57" transform="translate(50.89 117.72)" fill="url(#radial-gradient)"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 376.82, 115.1)" filter="url(#Rectangle_427)">
+        <rect id="Rectangle_427-2" data-name="Rectangle 427" width="473.863" height="33.147" rx="16.573" transform="translate(268.49 101.15)" fill="url(#radial-gradient-2)"/>
+      </g>
+      <path id="Path_9532" data-name="Path 9532" d="M582.207,457.2A116.382,116.382,0,1,1,698.589,340.818,116.38,116.38,0,0,1,582.207,457.2" transform="translate(300.038 324.713)" fill="none" stroke="#329edc" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

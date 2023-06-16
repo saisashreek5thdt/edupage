@@ -16,6 +16,8 @@ import {
   Vegetation,
   Trivia,
 } from "./pages";
+import Asses from "./pages/Asses";
+
 import Footer from "./pages/Footer";
 
 const rootElement = document.getElementById("root");
@@ -33,6 +35,7 @@ root.render(
       <Route path="/page/desert/sanddunes/" element={<SandDunes />} />
       <Route path="/page/desert/vegetation/" element={<Vegetation />} />
       <Route path="/page/desert/trivia/" element={<Trivia />} />
+      <Route path="/asses" element={<Asses />} />
     </Routes>
   </BrowserRouter>
 );
