@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.scss";
 import App from "./App";
@@ -18,8 +18,11 @@ import {
 } from "./pages";
 import Asses from "./pages/Asses";
 
+import Footer from "./pages/Footer";
+
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
+
 root.render(
   <BrowserRouter>
     <Routes>

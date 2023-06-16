@@ -5,9 +5,9 @@ const MenuBtn = () => {
   return (
     <>
       <a href="https://5thdt.com/schools/index.html">
-        <div className="overflow-hidden flex justify-end items-end mx-7">
+        <div className="overflow-hidden flex justify-end items-end mx-4">
           <img
-            className="overflow-hidden h-16 w-1h-16 my-4"
+            className="overflow-hidden h-14 w-1h-14 my-2"
             src={Menu}
             alt="Menu Button"
           />

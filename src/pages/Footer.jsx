@@ -21,28 +21,55 @@
 
 import React from "react";
 import footerIndex from "../assets/index/Component 9 – 2.png";
+import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer({
+  isIndexPage,
+  setIsIndexPage,
+  hidePageBtn,
+  open,
+  setOpen,
+  next,
+  last,
+  nextTopicBtn,
+}) {
   return (
-    <div className="bg-sky-700 flex justify-between w-screen pt-2 pb-3 text-white text-sm">
+    <div className="bg-sky-700 z-0 relative top-5 flex justify-between h-13 w-screen pt-2 pb-2 text-white text-sm">
       <div className="flex w-1/4 justify-between">
-        <p className="bg-white text-black p-2 pr-10 rounded-full rounded-l-none">
-          Last Name
-        </p>
+        <Link to={last}>
+          <p
+            className={`bg-white text-black ${
+              isIndexPage || hidePageBtn ? "invisible" : ""
+            } p-2 pr-10 rounded-full rounded-l-none`}
+          >
+            Last Topic
+          </p>
+        </Link>
+
         <p className="p-2">User Name</p>
         <p className="p-2">June 2022</p>
       </div>
       <div className="w-1/3 flex flex-col justify-end text-center align-baseline">
-        <div className="flex justify-center">
-          <img src={footerIndex} className="w-24 absolute bottom-8" />
-        </div>
+        <Link to={"/"} className="flex justify-center">
+          <img
+            src={footerIndex}
+            className="w-20 absolute bottom-8 cursor-pointer"
+            onClick={() => setOpen(!open)}
+          />
+        </Link>
         <p>Index</p>
       </div>
       <div className="flex w-1/4 justify-end space-x-16">
         <p className="p-2">00 Bookmarks</p>
-        <p className="bg-white text-black ml-auto p-2 pl-10 rounded-full rounded-r-none">
-          Next Topic
-        </p>
+        <Link to={next}>
+          <p
+            className={`bg-white text-black ml-auto p-2 pl-10 rounded-full rounded-r-none ${
+              isIndexPage || nextTopicBtn ? "invisible" : ""
+            }`}
+          >
+            Next Topic
+          </p>
+        </Link>
       </div>
     </div>
   );
