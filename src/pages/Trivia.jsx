@@ -18,6 +18,7 @@ const images = [
     description:
       "Although the lifestyle can be extremely challenging, still, people live in deserts. As a matter of fact, about 1 billion people live with their livestock. However, it’s difficult to get water in the desert; hence, these people have difficulty adapting to the ecosystem.",
   },
+
   {
     src: triviaImage2,
     description:

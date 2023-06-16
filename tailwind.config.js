@@ -9,9 +9,13 @@ module.exports = {
       width: {
         700: "700px",
         800: "800px",
+        500: "500px",
       },
       fontSize: {
         16: "16px",
+      },
+      backgroundColor: {
+        indexLine: "#948888",
       },
     },
     fontFamily: {
