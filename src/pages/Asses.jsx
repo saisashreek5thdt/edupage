@@ -121,15 +121,18 @@
 // }
 
 // export default Asses;
-
 import React, { useEffect, useState } from "react";
 import userIcon from "../assets/images/user/userIcon.png";
 import startbutton from "../assets/assess/start-button.svg";
 import bgImage from "../assets/assess/bg-image.svg";
 import newbg from "../assets/assess/newbg.svg";
 
+import qBanner from "../assets/assess/questions-banner.svg";
+import nextImage from "../assets/assess/next-img.svg";
+
 function Asses() {
   const [zoomLevel, setZoomLevel] = useState(1);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     const zoomInterval = setInterval(() => {
@@ -138,6 +141,10 @@ function Asses() {
 
     return () => clearInterval(zoomInterval);
   }, []);
+
+  const handleShow = () => {
+    setShow(true);
+  };
 
   return (
     <div
@@ -155,22 +162,49 @@ function Asses() {
         />
       </div>
 
-      <div className="flex w-screen justify-center items-center flex-col h-80 relative">
-        <img
-          src={newbg}
-          alt="Current Image"
-          className="object-full w-800 h-auto m-3"
-        />
-        <div className="absolute top-60">
+      {show ? (
+        <div className="flex w-screen justify-center items-center flex-col h-96 relative ml-24">
           <img
-            src={startbutton}
-            alt="Start Button"
-            className={`object-contain w-36 h-36 m-3 rounded-full transition-transform duration-1000 ${
-              zoomLevel === 1.05 ? "scale-125" : ""
-            }`}
+            src={qBanner}
+            alt="Current Image"
+            className="object-full w-800 h-auto m-3"
           />
+          <div className="absolute top-60">
+            <img
+              src={nextImage}
+              alt="Next Button"
+              className={`object-contain w-36 h-36 m-3 rounded-full transition-transform duration-1000`}
+            />
+          </div>
+          <div className="absolute top-20">
+            <h2 className="text-3xl text-white">Question Title</h2>
+            <ul className="text-white">
+              <li>Option 1</li>
+              <li>Option 2</li>
+              <li>Option 3</li>
+              <li>Option 4</li>
+            </ul>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="flex w-screen justify-center items-center flex-col h-80 relative">
+          <img
+            src={newbg}
+            alt="Current Image"
+            className="object-full w-800 h-auto m-3"
+          />
+          <div className="absolute top-60">
+            <img
+              src={startbutton}
+              alt="Start Button"
+              onClick={handleShow}
+              className={`object-contain w-36 h-36 m-3 rounded-full transition-transform duration-1000 ${
+                zoomLevel === 1.05 ? "scale-125" : ""
+              }`}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

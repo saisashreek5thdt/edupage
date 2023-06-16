@@ -1,6 +1,6 @@
 import React from "react";
-import { Player } from 'video-react';
-import video1 from "../assets/audio/Desert_Video.mp4"
+import { Player } from "video-react";
+import video1 from "../assets/audio/Desert_Video.mp4";
 
 const VideoPlayer = () => {
   return (

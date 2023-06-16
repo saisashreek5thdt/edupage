@@ -160,7 +160,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className="relative bottom-2">
+      <div className="absolute bottom-5">
         <Footer
           isIndexPage={isIndexPage}
           setIsIndexPage={setIsIndexPage}

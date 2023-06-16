@@ -57,8 +57,8 @@ const Trivia = () => {
   const currentImage = images[currentImageIndex];
 
   return (
-    <div className="flex flex-col justify-between h-screen ">
-      <div className="w-screen flex justify-between">
+    <div className="flex flex-col justify-between h-72 ">
+      <div className="w-screen flex justify-between ">
         <h1 className="pt-4 pl-4 md:pt-16 md:pl-16 text-2xl">Trivia</h1>
         <img
           src={userIcon}
@@ -78,7 +78,7 @@ const Trivia = () => {
           <img
             src={currentImage.src}
             alt="Current Image"
-            className="object-contain xl:w-800 lg:w-2/4 w-72 md:w-3/4 h-auto"
+            className="object-contain xl:w-700 lg:w-2/4 w-72 md:w-3/4 h-auto"
           />
           <button
             onClick={handleNextClick}
@@ -88,10 +88,10 @@ const Trivia = () => {
             <FiChevronRight />
           </button>
         </div>
-        <div className="mt-5 flex justify-center items-center shadow-xl pt-3">
-          <p className="bg-white p-2 sm:w-fit md:w-700 md:p-4 text-blue-900 text-sm text-center w-700 flex">
-            <img src={treeImg} className="w-16" />
-            <p className="pl-5 xl:text-16 text-left font-medium">
+        <div className="mt-1 flex justify-center items-center shadow-xl pt-2">
+          <p className="bg-white p-1 sm:w-fit md:w-700 md:p-3 text-blue-900 text-sm text-center w-700 flex">
+            <img src={treeImg} className="w-14" />
+            <p className="pl-5 xl:text-sm text-left font-medium">
               {currentImage.description}
             </p>
           </p>
@@ -108,12 +108,11 @@ const Trivia = () => {
           ))}
         </div>
       </div>
-      <div>
+      <div className="absolute bottom-5">
         <Footer
-          last={"/page/desert/vegetation/"}
-          next={""}
+          last={"/page/desert/habitat/"}
+          next={"/page/desert/sanddunes/"}
           hidePageBtn={false}
-          nextTopicBtn={true}
         />
       </div>
     </div>

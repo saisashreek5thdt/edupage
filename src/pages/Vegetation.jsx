@@ -68,10 +68,10 @@ function Vegetation() {
         </div>
       </div>
 
-      <div>
+      <div className="absolute bottom-5">
         <Footer
-          last={"/page/desert/sanddunes/"}
-          next={"/page/desert/trivia/"}
+          last={"/page/desert/habitat/"}
+          next={"/page/desert/sanddunes/"}
           hidePageBtn={false}
         />
       </div>

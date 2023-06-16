@@ -194,7 +194,7 @@ const SandDunes = () => {
 
       <VideoPlayer />
       <AudioPlayer />
-      <div>
+      <div className="absolute bottom-5">
         <Footer
           last={"/page/desert/oasis/info/"}
           next={"/page/desert/vegetation/"}
