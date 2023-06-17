@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.scss";
+import "./assets/fonts/stylesheet.scss"
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
