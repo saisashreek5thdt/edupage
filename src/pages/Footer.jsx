@@ -27,6 +27,7 @@ function Footer({
   isIndexPage,
   hideFirstTopicBtn,
   setOpen,
+  open,
   next,
   last,
   hideLastTopicBtn,
