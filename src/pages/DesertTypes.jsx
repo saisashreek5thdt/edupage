@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 import DesertType1 from "../assets/images/Desert-Type-1.png";
 import DesertType2 from "../assets/images/Desert-Type-2.png";
+import DesertType3 from "../assets/images/desert-bg-8.jpeg";
 import AudioPlayer from "./AudioPlayer";
 import factsBtn from "../assets/icons/Group_7314.png";
 import clickHereBtn from "../assets/icons/Group_7344.png";
-
 import MenuBtn from "./MenuBtn";
 import VideoPlayer from "./VideoPlayer";
 import ModalBox from "./ModalBox";
@@ -14,8 +14,10 @@ import { Link } from "react-router-dom";
 
 const DesertTypes = () => {
   const [desertTypes, setDesertTypes] = useState("");
+  const [hideFooter, setHideFooter] = useState(false);
   const handleClick = () => {
-    setDesertTypes([DesertType1, DesertType2]);
+    setDesertTypes([DesertType3, DesertType2]);
+    setHideFooter(true);
   };
 
   return (
@@ -94,11 +96,19 @@ const DesertTypes = () => {
             <ModalBox
               desertTypes={desertTypes}
               setDesertTypes={setDesertTypes}
+              setHideFooter={setHideFooter}
             />
           )}
         </div>
         <div className="absolute bottom-5">
-          <Footer last={"/page/desert/info/"} next={"/page/desert/habitat/"} />
+          {hideFooter ? (
+            ""
+          ) : (
+            <Footer
+              last={"/page/desert/info/"}
+              next={"/page/desert/habitat/"}
+            />
+          )}
         </div>
       </section>
       {/* 

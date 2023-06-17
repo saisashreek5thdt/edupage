@@ -114,7 +114,7 @@ const Trivia = () => {
       </div>
       <div className="absolute bottom-5">
         <Footer
-          last={"/page/desert/habitat/"}
+          last={"/page/desert/vegetation/"}
           next={"/page/desert/assesment"}
           hidePageBtn={false}
         />

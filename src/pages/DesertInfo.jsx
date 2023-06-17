@@ -91,9 +91,9 @@ const DesertInfo = () => {
       {/* <AudioPlayer /> */}
       <div className="absolute bottom-5">
         <Footer
-          last={"/page/desert/habitat/"}
-          next={"/page/desert/sanddunes/"}
-          hidePageBtn={false}
+          last={""}
+          next={"/page/desert/types/"}
+          hideFirstTopicBtn={true}
         />
       </div>
     </>
