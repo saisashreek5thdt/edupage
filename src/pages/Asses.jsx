@@ -10,6 +10,7 @@ import nextImage from "../assets/assess/next-img.svg";
 import allquestion from "./questions.json";
 
 import clickSound from "../assets/audio/click.wav";
+import { useNavigate } from "react-router-dom";
 
 function Asses() {
   const [zoomLevel, setZoomLevel] = useState(1);
@@ -18,6 +19,7 @@ function Asses() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
   const [showResult, setShowResult] = useState(false);
+  const navigate = useNavigate();
 
   const clickAudio = new Audio(clickSound);
 
@@ -49,6 +51,10 @@ function Asses() {
       setSelectedOptionIndex(null);
       setShowResult(false);
       setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
+    }
+    if (currentQuestionIndex === questions.length - 1) {
+      console.log("goto index page");
+      navigate("/");
     }
   };
 
