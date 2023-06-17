@@ -110,7 +110,7 @@ function Asses() {
             alt="Current Image"
             className="object-full w-800 h-auto m-3"
           />
-          <div className="absolute top-52 left-[557px]">
+          <div className="absolute top-52 mr-28">
             <img
               src={nextImage}
               alt="Next Button"
@@ -118,7 +118,7 @@ function Asses() {
               className={`object-contain w-36 h-36 m-3 rounded-full transition-transform duration-1000`}
             />
           </div>
-          <div className=" flex absolute bottom-[413px] left-[475px]">
+          <div className=" flex absolute bottom-[413px] mr-28 pr-2">
             {dots.map((i) => (
               <p
                 className={`mx-2 p-2 rounded-full z-50 shadow-2xl ${
@@ -129,7 +129,8 @@ function Asses() {
               />
             ))}
           </div>
-          <div className="flex flex-col  absolute w-[600px] top-2 left-[340px] ">
+          {/* <div className="flex flex-col  absolute w-[600px] top-2 left-[340px] "> */}
+          <div className="flex flex-col absolute w-[600px] top-2 left-[47%] transform -translate-x-1/2">
             <h2 className="text-3xl text-center text-gray-700 pb-8">
               {questions[currentQuestionIndex].id}.{" "}
               {questions[currentQuestionIndex].question}
@@ -146,7 +147,7 @@ function Asses() {
             alt="Current Image"
             className="object-full w-800 h-auto m-3"
           />
-          <div className="absolute top-60 left-[615px]">
+          <div className="absolute top-60 ">
             <img
               src={startbutton}
               alt="Start Button"
