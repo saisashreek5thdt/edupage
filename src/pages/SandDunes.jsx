@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import MenuBtn from "./MenuBtn";
 
 import { videoBtn, audioBtn } from "../pages/Btns";
 
 import AudioPlayer from "./AudioPlayer";
 import VideoPlayer from "./VideoPlayer";
+import ReactAudioPlayer from "react-audio-player";
 
 import Sand1 from "../assets/images/sand-dunes/sand1.jpg";
 import Sand2 from "../assets/images/sand-dunes/sand2.jpg";
@@ -13,6 +14,9 @@ import Sand4 from "../assets/images/sand-dunes/sand4.jpg";
 import Sand5 from "../assets/images/sand-dunes/sand5.jpg";
 import Sand6 from "../assets/images/sand-dunes/vertical-shot-patterns-beautiful-sand-dunes-desert.png";
 import Footer from "./Footer";
+
+import audio1 from "../assets/audio/audio1.mp3";
+import Audio from "./Audio";
 
 const dunesImgs = [
   {
@@ -48,6 +52,12 @@ const dunesImgs = [
 ];
 
 const SandDunes = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayPause = () => {
+    setIsPlaying((prevState) => !prevState);
+  };
+
   return (
     <>
       {/* 
@@ -161,7 +171,7 @@ const SandDunes = () => {
               Mars is crescentic. Crescent-fashioned mounds commonly are
               wider than long.
             </p>
-            <div className="flex lg:flex-row md:flex-col">
+            {/* <div className="flex lg:flex-row md:flex-col">
               <button
                 type="button"
                 className="inline-flex py-3 px-5 items-center focus:outline-none"
@@ -178,6 +188,22 @@ const SandDunes = () => {
               >
                 {audioBtn()}
               </button>
+            </div> */}
+            <div className="z-0 sm:flex sm:justify-center lg:justify-start">
+              <div
+                className="rounded-md shadow cursor-pointer mr-4"
+                data-bs-toggle="modal"
+                data-bs-target="#videoModal"
+              >
+                {videoBtn()}
+              </div>
+              <div className="mt-3 sm:mt-0 sm:ml-3 cursor-pointer">
+                {/* {audioBtn()} */}
+
+                <div onClick={handlePlayPause}>
+                  <Audio isPlaying={isPlaying} />
+                </div>
+              </div>
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full pb-60 md:w-1/2 w-5/6">
@@ -199,7 +225,9 @@ const SandDunes = () => {
       </section>
 
       <VideoPlayer />
-      <AudioPlayer />
+      {/* <AudioPlayer /> */}
+      {isPlaying && <ReactAudioPlayer src={audio1} autoPlay />}
+
       <div className="absolute bottom-5">
         <Footer
           last={"/page/desert/oasis/info/"}

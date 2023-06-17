@@ -32,7 +32,7 @@ const images = [
   {
     src: triviaImage2,
     description:
-      "Atacama desert is a unique region in Chile with no rainfall for 40 million years. ",
+      "Atacama desert is a unique region in Chile with no rainfall for 40 million years.",
   },
   {
     src: triviaImage4,
@@ -46,10 +46,8 @@ const Trivia = () => {
 
   const handleNextClick = () => {
     setImageTransition(true);
-    setTimeout(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-      setImageTransition(false);
-    }, 500); // Adjust the duration to control the transition speed
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setImageTransition(false);
   };
 
   const handlePrevClick = () => {
@@ -59,7 +57,7 @@ const Trivia = () => {
         prevIndex === 0 ? images.length - 1 : prevIndex - 1
       );
       setImageTransition(false);
-    }, 500); // Adjust the duration to control the transition speed
+    }, 100); // Adjust the duration to control the transition speed
   };
 
   const currentImage = images[currentImageIndex];
@@ -78,20 +76,18 @@ const Trivia = () => {
         <div className="relative flex items-center justify-center">
           <button
             onClick={handlePrevClick}
-            className="md:p-4 p-2 rounded-full text-gray-400 md:text-6xl sm:text-3xl transition-opacity duration-500 hover:text-gray-600"
+            className="md:p-4 p-2 rounded-full text-gray-400 md:text-6xl sm:text-3xl duration-500 hover:text-gray-600"
           >
             <FiChevronLeft />
           </button>
           <img
             src={currentImage.src}
             alt="Current Image"
-            className={`object-contain xl:w-700 lg:w-2/4 w-72 md:w-3/4 h-auto transition-opacity duration-500 ${
-              imageTransition ? "opacity-0" : "opacity-100"
-            }`}
+            className={`object-contain xl:w-700 lg:w-2/4 w-72 md:w-3/4 h-auto`}
           />
           <button
             onClick={handleNextClick}
-            className="md:p-4 p-2 rounded-full text-gray-400 md:text-6xl sm:text-3xl transition-opacity duration-500 hover:text-gray-600"
+            className="md:p-4 p-2 rounded-full text-gray-400 md:text-6xl sm:text-3xl hover:text-gray-600"
           >
             <FiChevronRight />
           </button>
