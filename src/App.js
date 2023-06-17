@@ -92,7 +92,7 @@ const App = () => {
               {Menu2.map((menu) => (
                 <div
                   key={menu.id}
-                  className="bg-white  my-2 py-2 px-1 rounded-r-full flex flex-grow"
+                  className="bg-white  my-2 py-2 ml-[-10px] px-0 rounded-r-full flex flex-grow"
                 >
                   <div className="bg-blue-400">
                     <li
