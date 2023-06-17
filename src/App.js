@@ -10,7 +10,7 @@ const Menu1 = [
   {
     id: 1,
     name: "Assessment",
-    href: "/page/desert/info/",
+    href: "/page/desert/assesment",
     icon1: img2,
     icon2: "",
   },
@@ -76,7 +76,7 @@ const Menu2 = [
 ];
 
 const App = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [isIndexPage, setIsIndexPage] = useState(true);
 
   return (

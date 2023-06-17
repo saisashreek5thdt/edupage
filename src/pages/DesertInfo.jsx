@@ -5,9 +5,19 @@ import AudioPlayer from "./AudioPlayer";
 
 import MenuBtn from "./MenuBtn";
 import VideoPlayer from "./VideoPlayer";
+import ReactAudioPlayer from "react-audio-player";
 import Footer from "./Footer";
 
+import audio1 from "../assets/audio/audio1.mp3";
+import Audio from "./Audio";
+
 const DesertInfo = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayPause = () => {
+    setIsPlaying((prevState) => !prevState);
+  };
+
   const [open, setOpen] = useState(true);
   return (
     <>
@@ -54,12 +64,12 @@ const DesertInfo = () => {
                     >
                       {videoBtn()}
                     </div>
-                    <div
-                      className="mt-3 sm:mt-0 sm:ml-3 cursor-pointer"
-                      data-bs-toggle="modal"
-                      data-bs-target="#audioModal"
-                    >
-                      {audioBtn()}
+                    <div className="mt-3 sm:mt-0 sm:ml-3 cursor-pointer">
+                      {/* {audioBtn()} */}
+
+                      <div onClick={handlePlayPause}>
+                        <Audio isPlaying={isPlaying} />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -76,13 +86,14 @@ const DesertInfo = () => {
         </div>
       </section>
       <VideoPlayer />
-      <AudioPlayer />
+      {isPlaying && <ReactAudioPlayer src={audio1} autoPlay />}
+
+      {/* <AudioPlayer /> */}
       <div className="absolute bottom-5">
         <Footer
-          setOpen={setOpen}
           last={""}
           next={"/page/desert/types/"}
-          hidePageBtn={true}
+          hideFirstTopicBtn={true}
         />
       </div>
     </>

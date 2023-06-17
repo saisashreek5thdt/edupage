@@ -35,7 +35,13 @@
     <path id="Rectangle_54" data-name="Rectangle 54" d="M0,0H132a0,0,0,0,1,0,0V16a24,24,0,0,1-24,24H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(1282 724)" fill="#3bc195"/>
     <text id="_3_mins_test" data-name="3 mins test" transform="translate(1346 750)" fill="#fafafa" font-size="14" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="-34.621" y="0">3 mins test</tspan></text>
     <g id="Group_2371" data-name="Group 2371" transform="translate(77.524 76.415)">
-      <path id="Path_9531" data-name="Path 9531" d="M603.229,504.639a142.8,142.8,0,1,1,142.8-142.8,142.8,142.8,0,0,1-142.8,142.8" transform="translate(279.015 303.691)" fill="none" stroke="#3bc195" stroke-miterlimit="10" stroke-width="2"/>
+           <path id="Path_9531" data-name="Path 9531" d="M603.229,504.639a142.8,142.8,0,1,1,142.8-142.8,142.8,142.8,0,0,1-142.8,142.8" transform="translate(279.015 303.691)" fill="none" stroke="#3bc195" stroke-miterlimit="10" stroke-width="2">
+
+        <!-- Animation for stroke-dasharray and stroke-dashoffset -->
+        <animate attributeName="stroke-dasharray" values="1000;0" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;1000" dur="5s" repeatCount="indefinite"/>
+
+      </path>
       <g transform="matrix(1, 0, 0, 1, 376.82, 115.1)" filter="url(#Rectangle_425)">
         <rect id="Rectangle_425-2" data-name="Rectangle 425" width="986.839" height="422.242" rx="10.074" transform="translate(12 12)" fill="none"/>
       </g>
@@ -47,6 +53,7 @@
       </g>
       <path id="Path_9532" data-name="Path 9532" d="M582.207,457.2A116.382,116.382,0,1,1,698.589,340.818,116.38,116.38,0,0,1,582.207,457.2" transform="translate(300.038 324.713)" fill="none" stroke="#3bc195" stroke-width="2"/>
     </g>
+    
     <text id="GROWING_A_GROWTH_MINDSET_Are_You_Ready_for_a_Positive_Change_" data-name="GROWING A GROWTH MINDSET
 Are You Ready for a Positive Change?
 

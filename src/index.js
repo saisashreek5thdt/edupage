@@ -35,7 +35,7 @@ root.render(
       <Route path="/page/desert/sanddunes/" element={<SandDunes />} />
       <Route path="/page/desert/vegetation/" element={<Vegetation />} />
       <Route path="/page/desert/trivia/" element={<Trivia />} />
-      <Route path="/asses" element={<Asses />} />
+      <Route path="/page/desert/assesment" element={<Asses />} />
     </Routes>
   </BrowserRouter>
 );

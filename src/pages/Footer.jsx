@@ -25,13 +25,11 @@ import { Link } from "react-router-dom";
 
 function Footer({
   isIndexPage,
-  setIsIndexPage,
-  hidePageBtn,
-  open,
+  hideFirstTopicBtn,
   setOpen,
   next,
   last,
-  nextTopicBtn,
+  hideLastTopicBtn,
 }) {
   return (
     <div className="bg-sky-700 z-0 relative top-5 flex justify-between h-13 w-screen pt-2 pb-2 text-white text-sm">
@@ -39,7 +37,7 @@ function Footer({
         <Link to={last}>
           <p
             className={`bg-white text-black ${
-              isIndexPage || hidePageBtn ? "invisible" : ""
+              isIndexPage || hideFirstTopicBtn ? "invisible" : ""
             } p-2 pr-10 rounded-full rounded-l-none`}
           >
             Last Topic
@@ -54,7 +52,7 @@ function Footer({
           <img
             src={footerIndex}
             className="w-20 absolute bottom-8 cursor-pointer"
-            onClick={() => setOpen(!open)}
+            onClick={() => setOpen(true)}
           />
         </Link>
         <p>Index</p>
@@ -64,7 +62,7 @@ function Footer({
         <Link to={next}>
           <p
             className={`bg-white text-black ml-auto p-2 pl-10 rounded-full rounded-r-none ${
-              isIndexPage || nextTopicBtn ? "invisible" : ""
+              isIndexPage || hideLastTopicBtn ? "invisible" : ""
             }`}
           >
             Next Topic
