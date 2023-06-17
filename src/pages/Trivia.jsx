@@ -42,22 +42,31 @@ const images = [
 
 const Trivia = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageTransition, setImageTransition] = useState(false);
 
   const handleNextClick = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setImageTransition(true);
+    setTimeout(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setImageTransition(false);
+    }, 500); // Adjust the duration to control the transition speed
   };
 
   const handlePrevClick = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    setImageTransition(true);
+    setTimeout(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+      setImageTransition(false);
+    }, 500); // Adjust the duration to control the transition speed
   };
 
   const currentImage = images[currentImageIndex];
 
   return (
-    <div className="flex flex-col justify-between h-72 ">
-      <div className="w-screen flex justify-between ">
+    <div className="flex flex-col justify-between h-72">
+      <div className="w-screen flex justify-between">
         <h1 className="pt-4 pl-4 md:pt-16 md:pl-16 text-2xl">Trivia</h1>
         <img
           src={userIcon}
@@ -65,25 +74,25 @@ const Trivia = () => {
           className="object-contain w-16 h-16 m-3 rounded-full mr-10"
         />
       </div>
-      <div className="flex flex-col items-center justify-center relative ">
+      <div className="flex flex-col items-center justify-center relative">
         <div className="relative flex items-center justify-center">
           <button
             onClick={handlePrevClick}
-            className=" md:p-4  p-2  rounded-full text-gray-400 md:text-6xl sm: text-3xl "
+            className="md:p-4 p-2 rounded-full text-gray-400 md:text-6xl sm:text-3xl transition-opacity duration-500 hover:text-gray-600"
           >
-            {/* &lt; */}
             <FiChevronLeft />
           </button>
           <img
             src={currentImage.src}
             alt="Current Image"
-            className="object-contain xl:w-700 lg:w-2/4 w-72 md:w-3/4 h-auto"
+            className={`object-contain xl:w-700 lg:w-2/4 w-72 md:w-3/4 h-auto transition-opacity duration-500 ${
+              imageTransition ? "opacity-0" : "opacity-100"
+            }`}
           />
           <button
             onClick={handleNextClick}
-            className="md:p-4 p-2  rounded-full text-gray-400 md:text-6xl sm: text-3xl"
+            className="md:p-4 p-2 rounded-full text-gray-400 md:text-6xl sm:text-3xl transition-opacity duration-500 hover:text-gray-600"
           >
-            {/* &gt; */}
             <FiChevronRight />
           </button>
         </div>
