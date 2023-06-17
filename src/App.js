@@ -75,7 +75,7 @@ const Menu2 = [
 ];
 
 const App = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [isIndexPage, setIsIndexPage] = useState(true);
 
   return (
@@ -85,8 +85,8 @@ const App = () => {
           <div className="w-80 transition-shadow h-80 rounded-full mb-32 bg-gray-200  z-50 shadow-[2px_2px_2px_2px_rgb(0,0,0,0.3)]" />
           <div className="flex fixed w-full top-10 justify-between">
             <ul
-              className={`md:flex md:flex-col md:items-center md:pb-9  relative top-20   bg-transparent md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
-                open ? "left-[-10px]" : "left-[-490px]"
+              className={`md:flex md:flex-col md:items-center md:pb-9  relative top-20   bg-transparent md:z-auto z-[-1]  w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in left-[-490px] ${
+                open ? "left-[5px]" : ""
               }`}
             >
               {Menu2.map((menu) => (
@@ -123,8 +123,8 @@ const App = () => {
               ))}
             </ul>
             <ul
-              className={`md:flex md:flex-col md:items-center md:pb-9  rotate-180 relative top-12  bg-transparent md:z-auto z-[-1] left-2 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
-                open ? "left-[-10px]" : "left-[690px]"
+              className={`md:flex md:flex-col md:items-center md:pb-9  rotate-180 relative top-10  bg-transparent md:z-auto z-[-1]  w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in  left-[600px]  ${
+                open ? "left-[5px]" : ""
               }`}
             >
               {Menu1.map((menu) => (

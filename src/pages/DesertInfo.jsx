@@ -18,7 +18,6 @@ const DesertInfo = () => {
     setIsPlaying((prevState) => !prevState);
   };
 
-  const [open, setOpen] = useState(true);
   return (
     <>
       <section className="text-gray-600 ">
