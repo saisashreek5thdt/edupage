@@ -10,6 +10,7 @@ import MenuBtn from "./MenuBtn";
 import VideoPlayer from "./VideoPlayer";
 import ModalBox from "./ModalBox";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 const DesertTypes = () => {
   const [desertTypes, setDesertTypes] = useState("");
@@ -61,7 +62,10 @@ const DesertTypes = () => {
                 alt="desert-info"
                 src={clickHereBtn}
               />
-              <div class="flex h-10 relative top-1 justify-center ">
+              <Link
+                to={"/page/desert/assesment"}
+                class="flex h-10 relative top-1 justify-center "
+              >
                 <button class="bg-sky-200  font-normal py-2 px-2  ">
                   MCQ &emsp; |
                 </button>
@@ -71,7 +75,7 @@ const DesertTypes = () => {
                 <button class="bg-sky-200  font-normal py-2 px-2  ">
                   Choose right answer
                 </button>
-              </div>
+              </Link>
             </div>
           </div>
           <div className="flex sm:flex-row md:flex-col">
