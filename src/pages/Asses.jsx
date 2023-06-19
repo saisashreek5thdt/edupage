@@ -10,8 +10,15 @@ import nextImage from "../assets/assess/next-img.svg";
 import allquestion from "./questions.json";
 
 import clickSound from "../assets/audio/click.wav";
+import { addMcqAnswers } from "../action/mcqAction";
+import ScoreBoard from "./ScoreBoard";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Asses() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [zoomLevel, setZoomLevel] = useState(1);
   const dots = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   const [show, setShow] = useState(false);
@@ -34,21 +41,19 @@ function Asses() {
   };
 
   const questions = allquestion.questions;
-  console.log(questions);
-
-  const handleOptionClick = (optionIndex) => {
-    if (!showResult) {
-      setSelectedOptionIndex(optionIndex);
-      setShowResult(true);
-      clickAudio.play();
-    }
-  };
 
   const handleNextQuestion = () => {
     if (selectedOptionIndex != null) {
       setSelectedOptionIndex(null);
       setShowResult(false);
-      setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
+      // setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
+
+      if (currentQuestionIndex === questions.length - 1) {
+        // Last question reached, navigate to "/"
+        navigate("/page/desert/assesment/scoreboard");
+      } else {
+        setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
+      }
     }
   };
 
@@ -70,6 +75,21 @@ function Asses() {
           optionClass += " bg-green-500";
         }
       }
+
+      const handleOptionClick = (optionIndex) => {
+        if (!showResult) {
+          setSelectedOptionIndex(optionIndex);
+          setShowResult(true);
+          clickAudio.play();
+
+          dispatch(
+            addMcqAnswers({
+              questionId: currentQuestion.id,
+              answer: currentQuestion.options[optionIndex],
+            })
+          );
+        }
+      };
 
       return (
         <label
