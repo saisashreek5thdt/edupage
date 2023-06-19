@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DesertBg1 from "../assets/images/DesertImg.png";
 import { videoBtn, audioBtn } from "../pages/Btns";
 import AudioPlayer from "./AudioPlayer";
@@ -13,12 +13,38 @@ import Audio from "./Audio";
 
 const DesertInfo = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [highlightIndex, setHighlightIndex] = useState(0);
+
+  // Split the paragraph text into an array of words
+  const paragraph =
+    "A desert is a large region that gets very little rain each year. Most deserts get less than 10 inches of rain in a year. Some deserts are hot and some are cold. Some deserts are huge areas of sand while others have rocky hills and mountains.".split(
+      " "
+    );
 
   const handlePlayPause = () => {
     setIsPlaying((prevState) => !prevState);
   };
 
-  const [open, setOpen] = useState(true);
+  useEffect(() => {
+    let intervalId;
+    if (isPlaying) {
+      intervalId = setInterval(() => {
+        setHighlightIndex((prevIndex) => {
+          if (prevIndex === paragraph.length - 1) {
+            clearInterval(intervalId);
+            setIsPlaying(false);
+          }
+          return prevIndex + 1;
+        });
+      }, 310);
+    } else {
+      clearInterval(intervalId);
+    }
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [isPlaying]);
+
   return (
     <>
       <section className="text-gray-600 ">
@@ -38,23 +64,26 @@ const DesertInfo = () => {
                     src={DesertBg1}
                     alt=""
                   />
-                  <p className="mt-3   text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 sm:whitespace-normal text-left">
-                    A desert is a large region that gets very little rain each
-                    year. Most deserts get less than 10 inches of rain in a
-                    year.
+                  <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 sm:whitespace-normal text-left">
+                    {paragraph.map((word, index) => (
+                      <span
+                        key={index}
+                        className={`
+              ${isPlaying && index <= highlightIndex ? "text-highlight" : ""}
+            `}
+                      >
+                        {word}{" "}
+                      </span>
+                    ))}
                   </p>
-                  <p className="mt-3   text-left text-base text-gray-500 sm:mx-auto sm:mt-5    sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 lg:text-left">
-                    Some deserts are hot and some are cold. Some deserts are
-                    huge areas of sand while others have rocky hills and
-                    mountains. The Deserts are found on every continent, and
-                    they cover more than 20% of the Earth. They are classified
-                    into two types – hot and cold based on their temperature.
-                    Although both the lands are dry and have unfavorable
-                    climatic conditions, they are different from each other in
-                    terms of their climate and, flora and fauna.
-                  </p>
-                  <p className="mt-3   text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 lg:text-left">
-                    Very few plants or animals live in desert areas.
+                  <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-base md:mt-5 md:text-base md:text-justify md:overflow-hidden lg:mx-0 sm:whitespace-normal text-left">
+                    The Deserts are found on every continent, and they cover
+                    more than 20% of the Earth. They are classified into two
+                    types – hot and cold based on their temperature. Although
+                    both the lands are dry and have unfavorable climatic
+                    conditions, they are different from each other in terms of
+                    their climate and, flora and fauna. Very few plants or
+                    animals live in desert areas.
                   </p>
                   <div className="z-0 pt-10  sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                     <div
@@ -65,8 +94,6 @@ const DesertInfo = () => {
                       {videoBtn()}
                     </div>
                     <div className="mt-3 sm:mt-0 sm:ml-3 cursor-pointer">
-                      {/* {audioBtn()} */}
-
                       <div onClick={handlePlayPause}>
                         <Audio isPlaying={isPlaying} />
                       </div>
