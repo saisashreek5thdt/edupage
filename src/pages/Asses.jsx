@@ -12,6 +12,7 @@ import allquestion from "./questions.json";
 
 import clickSound from "../assets/audio/click.wav";
 import { useNavigate } from "react-router-dom";
+import MenuBtn from "./MenuBtn";
 
 function Asses() {
   const [zoomLevel, setZoomLevel] = useState(1);
@@ -97,23 +98,26 @@ function Asses() {
   };
 
   return (
-    <div
-      className="bg-slate-500 w-screen h-screen"
-      style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
-    >
-      <div className="w-screen flex justify-between flex-col h-40 ">
-        <h1 className="pt-4 pl-4 md:pt-16 md:pl-16 text-4xl">Assessment : 1</h1>
-        <div className=" mt-2 mb-4 text-md ml-14 bg-sky-200 inline w-[350px] px-0 relative left-2">
-          <button className="bg-purple-200 my-[3px] px-1 ml-[2px] rounded-md 1 mr-2 font-Linotte">
-            MCQ
-          </button>
-          <button> I &emsp; True/False &emsp;</button>
-          <button> I &emsp; Choose right answer</button>
+    <>
+      <div
+        className="bg-slate-500 w-screen h-screen"
+        style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
+      >
+        <MenuBtn />
+        <div className="w-screen flex justify-between flex-col h-40 ">
+          <h1 className="pt-4 pl-4 md:pt-0 md:pl-16 text-4xl">
+            Assessment : 1
+          </h1>
+          <div className="  mb-4 text-md ml-14 bg-sky-200 inline w-[350px] px-0 relative bottom-16 left-2">
+            <button className="bg-purple-200 my-[3px] px-1 ml-[2px] rounded-md 1 mr-2 font-Linotte">
+              MCQ
+            </button>
+            <button> I &emsp; True/False &emsp;</button>
+            <button> I &emsp; Choose right answer</button>
+          </div>
         </div>
-      </div>
 
-      {show ? (
-        <div className="flex w-screen justify-center items-center flex-col h-96 relative ml-14 top-16">
+        <div className="flex w-screen justify-center items-center flex-col h-96 relative ml-14 top-0">
           <img
             src={qBanner}
             alt="Current Image"
@@ -149,26 +153,8 @@ function Asses() {
             </ul>
           </div>
         </div>
-      ) : (
-        <div className="flex w-screen justify-center items-center flex-col h-96 relative">
-          <img
-            src={newbg}
-            alt="Current Image"
-            className="object-full w-800 h-auto m-3"
-          />
-          <div className="absolute top-[268px] ">
-            <img
-              src={startbutton}
-              alt="Start Button"
-              onClick={handleShow}
-              className={`object-contain w-36 h-36 m-3 rounded-full transition-transform duration-1000 ${
-                zoomLevel === 1.05 ? "scale-125" : ""
-              }`}
-            />
-          </div>
-        </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 }
 
