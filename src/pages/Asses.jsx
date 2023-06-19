@@ -53,8 +53,8 @@ function Asses() {
       setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
     }
     if (currentQuestionIndex === questions.length - 1) {
-      console.log("goto index page");
-      navigate("/");
+      console.log("goto mcq page");
+      navigate("/page/desert/assesment2");
     }
   };
 

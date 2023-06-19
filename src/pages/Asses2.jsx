@@ -9,8 +9,8 @@ const Assess2 = () => {
   return (
     <div className="bg-cover absolute top-0 text-gray-700 bg-center h-screen w-screen bg-asses2_image">
       <div className="flex flex-col mx-24 my-14">
-        <div className="text-4xl pb-1  ">Assessment : 2</div>
-        <div className=" mt-2 mb-4 text-md bg-sky-200 inline w-[240px] px-0 relative left-2">
+        <div className="text-4xl pb-1 pl-6 ">Assessment : 2</div>
+        <div className=" mt-2 mb-4 text-md ml-7 bg-sky-200 inline w-[240px] px-0 relative left-2">
           <button className="bg-purple-200 my-[3px] px-1 ml-[2px] rounded-md 1 mr-2">
             True/False
           </button>
