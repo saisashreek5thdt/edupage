@@ -20,9 +20,13 @@ import {
 import Asses from "./pages/Asses";
 
 import Footer from "./pages/Footer";
+
 import store from "./store";
 import { Provider } from "react-redux";
 import ScoreBoard from "./pages/ScoreBoard";
+
+import Assess2 from "./pages/Asses2";
+import Asses3 from "./pages/Asses3";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -41,6 +45,8 @@ root.render(
         <Route path="/page/desert/vegetation/" element={<Vegetation />} />
         <Route path="/page/desert/trivia/" element={<Trivia />} />
         <Route path="/page/desert/assesment/" element={<Asses />} />
+        <Route path="/page/desert/assesment2" element={<Assess2 />} />
+        <Route path="/page/desert/assesment3" element={<Asses3 />} />
         <Route
           path="/page/desert/assesment/scoreboard"
           element={<ScoreBoard />}

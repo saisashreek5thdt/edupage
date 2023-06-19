@@ -7,11 +7,12 @@ export const addMcqAnswers = (answer) => ({
   payload: answer,
 });
 
-// export const addUserAnswer = (answer) => ({
-//   type: 'ADD_USER_ANSWER',
-//   payload: answer,
-// });
+export const addTrueOrFalse = (answer) => ({
+  type: "ADD_TRUE_FALSE",
+  payload: answer,
+});
 
-// export const resetResults = () => ({
-//   type: 'RESET_RESULTS',
-// });
+export const addDropDown = (answer) => ({
+  type: "ADD_DROP_DOWN",
+  payload: answer,
+});

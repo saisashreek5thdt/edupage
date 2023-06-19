@@ -1,7 +1,8 @@
-const ModalBox = ({ desertTypes, setDesertTypes }) => {
+const ModalBox = ({ desertTypes, setDesertTypes, setHideFooter }) => {
   const handleClick = (e) => {
     if (e.target.classList.contains("dismiss")) {
       setDesertTypes("");
+      setHideFooter(false);
     }
   };
 
@@ -78,16 +79,19 @@ const ModalBox = ({ desertTypes, setDesertTypes }) => {
       className="absolute z-50 top-0  right-0 w-full h-full mb-56 flex gap-24 justify-center bg-black/[.7]     dismiss overflow-y-scroll pb-10"
     >
       <div className="w-min h2 z-40  ">
-        <h4 className="bg-slate-100 w-[94.7%] mt-14 p-4 relative top-7 left-3  text-center text-3xl text-blue-400 ">
+        <h4 className="bg-slate-100  mt-14 p-4 relative top-7  text-center text-3xl text-blue-400 ">
           Hot Desert
         </h4>
         <img
-          className="block max-w-lg mt-4 m-auto"
+          className="block max-w-lg mt-4 m-auto bg-transparent"
           src={desertTypes[0]}
           alt="hottestDesert"
         />
         {hotDesertPara.map((para) => (
-          <p className="bg-white py-3 px-2 mt-4" key={para.id}>
+          <p
+            className="bg-white w-[100%] relative  top-[13px] py-3 px-2 mt-4"
+            key={para.id}
+          >
             {para.description}
           </p>
         ))}
@@ -104,7 +108,12 @@ const ModalBox = ({ desertTypes, setDesertTypes }) => {
           alt="coldestDesert"
         />
         {coldDesertPara.map((para) => (
-          <p className="bg-white py-3 px-2 mt-4" key={para.id}>
+          <p
+            className={`bg-white w-[95%] relative left-3 py-3 px-3 mt-4 ${
+              para.id === 2 || para.id === 7 ? "pt-3 pb-[37px]" : ""
+            }`}
+            key={para.id}
+          >
             {para.description}
           </p>
         ))}

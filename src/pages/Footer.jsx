@@ -27,6 +27,7 @@ function Footer({
   isIndexPage,
   hideFirstTopicBtn,
   setOpen,
+  open,
   next,
   last,
   hideLastTopicBtn,
@@ -45,7 +46,7 @@ function Footer({
         </Link>
 
         <p className="p-2">User Name</p>
-        <p className="p-2">June 2022</p>
+        <p className="p-2">June 2023</p>
       </div>
       <div className="w-1/3 flex flex-col justify-end text-center align-baseline">
         <Link to={"/"} className="flex justify-center">

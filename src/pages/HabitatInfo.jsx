@@ -151,7 +151,7 @@ const HabitatInfo = () => {
       </section>
       <div className="absolute bottom-5">
         <Footer
-          last={"page/desert/types/"}
+          last={"/page/desert/types/"}
           next={"/page/desert/oasis/info/"}
           hidePageBtn={false}
         />

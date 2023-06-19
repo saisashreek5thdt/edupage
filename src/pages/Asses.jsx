@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import userIcon from "../assets/images/user/userIcon.png";
 import startbutton from "../assets/assess/start-button.svg";
-import bgImage from "../assets/assess/bg-image.svg";
+// import bgImage from "../assets/assess/bg-image.svg";
+import bgImage from "../assets/bg/activity__bg.png";
 import newbg from "../assets/assess/newbg.svg";
 
 import qBanner from "../assets/assess/questions-banner.svg";
@@ -10,10 +11,13 @@ import nextImage from "../assets/assess/next-img.svg";
 import allquestion from "./questions.json";
 
 import clickSound from "../assets/audio/click.wav";
-import { addMcqAnswers } from "../action/mcqAction";
+
+// import { addMcqAnswers } from "../action/mcqAction";
 import ScoreBoard from "./ScoreBoard";
 import { useDispatch } from "react-redux";
+
 import { useNavigate } from "react-router-dom";
+import { addMcqAnswers } from "../action/mcqAction";
 
 function Asses() {
   const dispatch = useDispatch();
@@ -49,12 +53,16 @@ function Asses() {
       // setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
 
       if (currentQuestionIndex === questions.length - 1) {
-        // Last question reached, navigate to "/"
-        navigate("/page/desert/assesment/scoreboard");
+        // navigate("/page/desert/assesment/scoreboard");
+        navigate("/page/desert/assesment2");
       } else {
         setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
       }
     }
+    // if (currentQuestionIndex === questions.length - 1) {
+    //   console.log("goto mcq page");
+    //   navigate("/page/desert/assesment2");
+    // }
   };
 
   const renderOptions = () => {
@@ -98,7 +106,7 @@ function Asses() {
         >
           <input
             type="radio"
-            className="mr-2"
+            className="mr-2 text-cyan-500 border-none  "
             name="option"
             checked={isSelected}
             onChange={() => handleOptionClick(index)}
@@ -114,17 +122,19 @@ function Asses() {
       className="bg-slate-500 w-screen h-screen"
       style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
     >
-      <div className="w-screen flex justify-between h-44 ">
-        <h1 className="pt-4 pl-4 md:pt-16 md:pl-16 text-2xl">Assessment</h1>
-        <img
-          src={userIcon}
-          alt="User Icon"
-          className="object-contain w-16 h-16 m-3 rounded-full mr-10"
-        />
+      <div className="w-screen flex justify-between flex-col h-40 ">
+        <h1 className="pt-4 pl-4 md:pt-16 md:pl-16 text-4xl">Assessment : 1</h1>
+        <div className=" mt-2 mb-4 text-md ml-14 bg-sky-200 inline w-[350px] px-0 relative left-2">
+          <button className="bg-purple-200 my-[3px] px-1 ml-[2px] rounded-md 1 mr-2 font-Linotte">
+            MCQ
+          </button>
+          <button> I &emsp; True/False &emsp;</button>
+          <button> I &emsp; Choose right answer</button>
+        </div>
       </div>
 
       {show ? (
-        <div className="flex w-screen justify-center items-center flex-col h-96 relative ml-14 top-4">
+        <div className="flex w-screen justify-center items-center flex-col h-96 relative ml-14 top-16">
           <img
             src={qBanner}
             alt="Current Image"
@@ -161,13 +171,13 @@ function Asses() {
           </div>
         </div>
       ) : (
-        <div className="flex w-screen justify-center items-center flex-col h-80 relative">
+        <div className="flex w-screen justify-center items-center flex-col h-96 relative">
           <img
             src={newbg}
             alt="Current Image"
             className="object-full w-800 h-auto m-3"
           />
-          <div className="absolute top-60 ">
+          <div className="absolute top-[268px] ">
             <img
               src={startbutton}
               alt="Start Button"

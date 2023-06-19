@@ -1,0 +1,36 @@
+{
+    "asses3questions": [
+        { "id": 1,
+            "Piece1": "The great Indian desert is located in the",
+            "Piece2": "plains.",
+            "options": [ "northern", "south west", "north wes" ],
+            "correctAnswerIndex": 0
+
+        },
+        { "id": 2,
+            "Piece1": "Water from river",
+            "Piece2": "has been brought to the desert through the Indira Gandhi canal.",
+            "options": [ "Brahmaputra", "Sutlej", "Narmada" ],
+            "correctAnswerIndex": 1
+        },
+        { "id": 3,
+            "Piece1": "Desert plants have",
+            "Piece2": "roots",
+            "options": [ "thorny roots", " tap roots", "soft roots" ],
+            "correctAnswerIndex": 1
+        },
+        { "id": 4,
+            "Piece1": "The nomads of the desert are known as",
+            "Piece2": "",
+            "options": [ "Tongre", "Bejauin", "Raika" ],
+            "correctAnswerIndex": 2
+        },
+        { "id": 5,
+            "Piece1": "Plants like cacti require",
+            "Piece2": "water.",
+            "options": [ "average", "less" ],
+            "correctAnswerIndex": 1
+        }
+
+    ]
+}
