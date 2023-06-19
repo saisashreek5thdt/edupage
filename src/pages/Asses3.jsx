@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import questions from "./asses3questions.json";
 import brownCamel from "../assets/icons/Camel__brown.png";
+import redCamel from "../assets/icons/Camel__red.png";
+import greenCamel from "../assets/icons/Camel__green.png";
 import { addDropDown } from "../action/mcqAction";
 import { useNavigate } from "react-router-dom";
 import MenuBtn from "./MenuBtn";
@@ -64,13 +66,20 @@ const Asses3 = () => {
             const selectedOption = answeredQuestion
               ? answeredQuestion.answer
               : "";
+            const camelImage =
+              selectedOption === q.options[q.correctAnswerIndex]
+                ? greenCamel
+                : selectedOption === ""
+                ? brownCamel
+                : redCamel;
 
             return (
               <div
                 key={q.id}
                 className="flex justify-start mt-2 gap-2 flex-grow"
               >
-                <img alt="camel_logo" src={brownCamel} className="w-16" />
+                <img alt="camel_logo" src={camelImage} className="w-16" />
+
                 <p className="w-[72vw] mt-2 ml-4 text-[27px] flex-1">
                   {q.Piece1}
                   <select
