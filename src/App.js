@@ -124,7 +124,7 @@ const App = () => {
             </ul>
             <ul
               className={`md:flex md:flex-col md:items-center md:pb-9  rotate-180 relative top-10  bg-transparent md:z-auto z-[-1]  w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in  left-[600px]  ${
-                open ? "left-[5px]" : ""
+                open ? "left-[7px]" : ""
               }`}
             >
               {Menu1.map((menu) => (

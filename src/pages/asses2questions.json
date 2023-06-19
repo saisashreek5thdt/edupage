@@ -1,0 +1,19 @@
+{
+    "asses2questions": [
+        { "id": 1,
+            "question": "The cold desert ecosystem experience snow sometimes."
+        },
+        { "id": 2,
+            "question": "Deserts are also sources of petroleum and other minerals."
+        },
+        { "id": 3,
+            "question": "The wind velocity is very low in deserts."
+        },
+        { "id": 4,
+            "question": "Thorny shrubs easily die in deserts."
+        },
+        { "id": 5,
+            "question": "Deserts do not offer artiacts because of its settling."
+        }
+    ]
+}
