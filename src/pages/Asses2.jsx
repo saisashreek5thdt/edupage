@@ -5,7 +5,7 @@ import redCamel from "../assets/icons/Camel__red.png";
 import trueBtn from "../assets/buttons/Btn__true.png";
 import falseBtn from "../assets/buttons/Btn__false.png";
 
-const Assess2 = () => {
+const Asses2 = () => {
   return (
     <div className="bg-cover absolute top-0 text-gray-700 bg-center h-screen w-screen bg-asses2_image">
       <div className="flex flex-col mx-24 my-14">
@@ -35,4 +35,4 @@ const Assess2 = () => {
   );
 };
 
-export default Assess2;
+export default Asses2;
