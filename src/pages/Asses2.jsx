@@ -9,9 +9,10 @@ import falseBtn from "../assets/buttons/Btn__false.png";
 import { addTrueOrFalse } from "../action/mcqAction";
 import { useNavigate } from "react-router-dom";
 import clickSound from "../assets/audio/click.wav";
+import nextBtn from "../assets/buttons/NXT_Btn.png";
 import MenuBtn from "./MenuBtn";
 
-const Assess2 = () => {
+const Asses2 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const clickAudio = new Audio(clickSound);
@@ -78,12 +79,15 @@ const Assess2 = () => {
             );
           })}
         </div>
-        <button
-          className="text-end bg-green-500 p-3 w-fit"
-          onClick={handleNextClick}
-        >
-          Next
-        </button>
+
+        <div className="flex mt-16 justify-end">
+          <img
+            src={nextBtn}
+            alt="next"
+            className="h-12 w-32 cursor-pointer"
+            onClick={handleNextClick}
+          />
+        </div>
       </div>
     </div>
   );
