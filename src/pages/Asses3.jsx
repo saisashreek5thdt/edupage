@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import questions from "./asses3questions.json";
 import brownCamel from "../assets/icons/Camel__brown.png";
+
 import redCamel from "../assets/icons/Camel__red.png";
 import greenCamel from "../assets/icons/Camel__green.png";
+
+import nextBtn from "../assets/buttons/NXT_Btn.png";
+import submitBtn from "../assets/buttons/Submit_Btn.png";
+
 import { addDropDown } from "../action/mcqAction";
 import { useNavigate } from "react-router-dom";
 import MenuBtn from "./MenuBtn";
@@ -98,7 +103,14 @@ const Asses3 = () => {
             );
           })}
         </div>
-        <button onClick={handleClick}>Next</button>
+        <div className="flex mt-8 justify-end">
+          <img
+            src={nextBtn}
+            alt="next"
+            className="h-12 w-32 cursor-pointer"
+            onClick={handleClick}
+          />
+        </div>
       </div>
     </div>
   );
