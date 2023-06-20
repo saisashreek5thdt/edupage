@@ -16,7 +16,7 @@
         { "id": 3,
             "Piece1": "Desert plants have",
             "Piece2": "roots",
-            "options": [ "thorny roots", " tap roots", "soft roots" ],
+            "options": [ "thorny roots", "tap roots", "soft roots" ],
             "correctAnswerIndex": 1
         },
         { "id": 4,
