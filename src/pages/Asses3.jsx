@@ -40,8 +40,6 @@ const Asses3 = () => {
     }
   };
 
-  console.log("answers", answers);
-
   const handleClick = () => {
     answers.forEach((answer) => {
       dispatch(addDropDown(answer));
@@ -51,6 +49,10 @@ const Asses3 = () => {
 
     navigate("/page/desert/assesment/scoreboard");
   };
+
+  const isNextButtonDisabled =
+    answers.length !== questions.asses3questions.length;
+
   return (
     <div className="bg-cover absolute top-0 text-gray-700 bg-center h-screen w-screen bg-asses2_image">
       <MenuBtn />
@@ -103,14 +105,13 @@ const Asses3 = () => {
             );
           })}
         </div>
-        <div className="flex mt-8 justify-end">
-          <img
-            src={nextBtn}
-            alt="next"
-            className="h-12 w-32 cursor-pointer"
-            onClick={handleClick}
-          />
-        </div>
+        <button
+          className="flex mt-16 justify-end"
+          disabled={isNextButtonDisabled}
+          onClick={handleClick}
+        >
+          <img src={nextBtn} alt="next" className="h-12 w-32 cursor-pointer" />
+        </button>
       </div>
     </div>
   );
