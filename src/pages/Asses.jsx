@@ -108,7 +108,7 @@ function Asses() {
         >
           <input
             type="radio"
-            className="mr-2 text-cyan-500 border-none  "
+            className="mr-2 text-cyan-500 "
             name="option"
             checked={isSelected}
             onChange={() => handleOptionClick(index)}
