@@ -94,4 +94,4 @@ const Asses2 = () => {
   );
 };
 
-export default Assess2;
+export default Asses2;
