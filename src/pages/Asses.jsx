@@ -17,7 +17,9 @@ import ScoreBoard from "./ScoreBoard";
 import { useDispatch } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
+
 import { addMcqAnswers } from "../action/mcqAction";
+
 import MenuBtn from "./MenuBtn";
 
 function Asses() {
