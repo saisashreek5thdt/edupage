@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import triviaImage1 from "../assets/images/trivia/beautiful-view-tranquil-desert-clear-sky-captured-morocco.png";
-import triviaImage2 from "../assets/images/trivia/chile-4388206_1920.png";
-import triviaImage3 from "../assets/images/trivia/indian-men-resting-by-bonfire-with-their-camel (1).png";
-import triviaImage4 from "../assets/images/trivia/male-african-ostrich-national-reserve-park.png";
+import triviaImage1 from "../assets/images/trivia/beautiful-view-tranquil-desert-clear-sky-captured-morocco.jpeg";
+import triviaImage2 from "../assets/images/trivia/chile-4388206_1920.jpeg";
+import triviaImage3 from "../assets/images/trivia/indian-men-resting-by-bonfire-with-their-camel (1).jpeg";
+import triviaImage4 from "../assets/images/trivia/male-african-ostrich-national-reserve-park.jpeg";
 
-import triviaImage5 from "../assets/images/trivia/world-map-with-texture-global-satellite-photo-earth-view-from-space.png";
+import triviaImage5 from "../assets/images/trivia/world-map-with-texture-global-satellite-photo-earth-view-from-space.jpeg";
 import Footer from "./Footer";
 
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
