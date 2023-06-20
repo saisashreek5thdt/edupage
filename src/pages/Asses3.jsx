@@ -49,7 +49,7 @@ const Asses3 = () => {
 
     setAnswers([]);
 
-    navigate("/page/desert/assesment/scoreboard");
+    navigate("/page/desert/assesment4");
   };
 
   const isNextButtonDisabled =
@@ -60,15 +60,16 @@ const Asses3 = () => {
       <MenuBtn />
       <div className="flex flex-col mx-24 my-4">
         <div className="text-4xl pb-1 pl-6 ">Assessment : 3</div>
-        <div className=" mt-2 mb-4 text-md ml-7 bg-sky-200 inline w-[128px] relative left-2">
+        <div className=" mt-2 mb-4 text-md ml-7 bg-sky-200 inline w-[330px] relative left-2">
           <button className="bg-purple-200 my-[3px] px-1 ml-[4px] rounded-md ">
-            Fill in the blanks
+            Choose right answer
+          </button>
+          &emsp;
+          <button className=" my-[3px] px-1 ml-[4px] rounded-md ">
+            I &emsp; Fill in the blanks
           </button>
         </div>
-        <h4 className="absolute left-72 text-3xl top-36">
-          Deserts Are abandoned regions of the earth
-        </h4>
-        <h3 className="mb-2 mt-6 text-4xl">Choose the correct answer</h3>
+        <h3 className="mb-2 mt-4 text-4xl">Choose the correct answer</h3>
         <div className="flex flex-col">
           {questions.asses3questions.map((q) => {
             const answeredQuestion = answers.find((a) => a.id === q.id);

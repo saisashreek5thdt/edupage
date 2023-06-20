@@ -1,0 +1,22 @@
+{
+    "asses4questions": [
+        { "id": 1,
+            "question": "It has fewer sand dunes and more stable ground and hard rocks.",
+            "correctAnswer": "hot and dry desert"
+
+        },
+        { "id": 2,
+            "question": "It experience abundant rainfall and even snowfall.",
+            "correctAnswer": "coastal desert"
+        },
+        { "id": 3,
+            "question": "The soid tends to be rough and harsh.",
+            "correctAnswer": "semi- arid desert"
+        },
+        { "id": 4,
+            "question": "The soil here is heavy, silty, and salty.",
+            "correctAnswer": "cold desert"
+        }
+
+    ]
+}

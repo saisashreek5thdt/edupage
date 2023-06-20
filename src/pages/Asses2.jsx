@@ -6,7 +6,6 @@ import redCamel from "../assets/icons/Camel__red.png";
 import greenCamel from "../assets/icons/Camel__green.png";
 import trueBtn from "../assets/buttons/Btn__true.png";
 import falseBtn from "../assets/buttons/Btn__false.png";
-
 import { addTrueOrFalse } from "../action/mcqAction";
 import { useNavigate } from "react-router-dom";
 import clickSound from "../assets/audio/click.wav";
@@ -42,11 +41,12 @@ const Assess2 = () => {
       <MenuBtn />
       <div className="flex flex-col absolute top-8 mx-24 my-14">
         <div className="text-4xl pb-1 pl-6 ">Assessment : 2</div>
-        <div className=" mt-2 mb-4 text-md ml-7 bg-sky-200 inline w-[240px] px-0 relative left-2">
+        <div className=" mt-2 mb-4 text-md ml-7 bg-sky-200 inline w-[440px] px-0 relative left-2">
           <button className="bg-purple-200 my-[3px] px-1 ml-[2px] rounded-md 1 mr-2">
             True/False
           </button>
-          <button> I &emsp; Fill in the blanks</button>
+          <button> I &emsp; Choose right answer &emsp;</button>
+          <button> I &emsp; Fill in the blanks </button>
         </div>
         <div className="flex flex-col">
           {questions.asses2questions.map((q) => {
