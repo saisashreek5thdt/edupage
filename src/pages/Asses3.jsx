@@ -52,8 +52,9 @@ const Asses3 = () => {
     navigate("/page/desert/assesment/scoreboard");
   };
 
-  const isNextButtonDisabled =
-    answers.length !== questions.asses3questions.length;
+  // const isNextButtonDisabled =
+  // answers.length !== questions.asses3questions.length;
+  const isNextButtonDisabled = answers.length < 1;
 
   return (
     <div className="bg-cover absolute top-0 text-gray-700 bg-center h-screen w-screen bg-asses2_image">

@@ -34,8 +34,7 @@ const Assess2 = () => {
     navigate("/page/desert/assesment3");
   };
 
-  const isNextButtonDisabled =
-    answers.length !== questions.asses2questions.length;
+  const isNextButtonDisabled = answers.length < 1;
 
   return (
     <div className="bg-cover absolute top-0 text-gray-700 bg-center h-screen w-screen bg-asses2_image">
