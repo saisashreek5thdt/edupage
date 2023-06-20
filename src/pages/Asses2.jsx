@@ -11,9 +11,10 @@ import { addTrueOrFalse } from "../action/mcqAction";
 import { useNavigate } from "react-router-dom";
 import clickSound from "../assets/audio/click.wav";
 import nextBtn from "../assets/buttons/NXT_Btn.png";
+
 import MenuBtn from "./MenuBtn";
 
-const Asses2 = () => {
+const Assess2 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const clickAudio = new Audio(clickSound);
@@ -26,14 +27,15 @@ const Asses2 = () => {
     clickAudio.play();
   };
 
-  console.log(answers);
-
   const handleNextClick = () => {
     answers.forEach((answer) => {
       dispatch(addTrueOrFalse(answer));
     });
     navigate("/page/desert/assesment3");
   };
+
+  const isNextButtonDisabled =
+    answers.length !== questions.asses2questions.length;
 
   return (
     <div className="bg-cover absolute top-0 text-gray-700 bg-center h-screen w-screen bg-asses2_image">
@@ -81,17 +83,16 @@ const Asses2 = () => {
           })}
         </div>
 
-        <div className="flex mt-16 justify-end">
-          <img
-            src={nextBtn}
-            alt="next"
-            className="h-12 w-32 cursor-pointer"
-            onClick={handleNextClick}
-          />
-        </div>
+        <button
+          className="flex mt-16 justify-end"
+          disabled={isNextButtonDisabled}
+          onClick={handleNextClick}
+        >
+          <img src={nextBtn} alt="next" className="h-12 w-32 cursor-pointer" />
+        </button>
       </div>
     </div>
   );
 };
 
-export default Asses2;
+export default Assess2;
