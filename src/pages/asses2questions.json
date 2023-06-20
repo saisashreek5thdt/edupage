@@ -1,19 +1,30 @@
 {
     "asses2questions": [
-        { "id": 1,
-            "question": "The cold desert ecosystem experience snow sometimes."
-        },
-        { "id": 2,
-            "question": "Deserts are also sources of petroleum and other minerals."
-        },
-        { "id": 3,
-            "question": "The wind velocity is very low in deserts."
-        },
-        { "id": 4,
-            "question": "Thorny shrubs easily die in deserts."
-        },
-        { "id": 5,
-            "question": "Deserts do not offer artiacts because of its settling."
-        }
+      {
+        "id": 1,
+        "question": "The cold desert ecosystem experience snow sometimes.",
+        "trueOrFalse": true
+      },
+      {
+        "id": 2,
+        "question": "Deserts are also sources of petroleum and other minerals.",
+        "trueOrFalse": true
+      },
+      {
+        "id": 3,
+        "question": "The wind velocity is very low in deserts.",
+        "trueOrFalse": true
+      },
+      {
+        "id": 4,
+        "question": "Thorny shrubs easily die in deserts.",
+        "trueOrFalse": true
+      },
+      {
+        "id": 5,
+        "question": "Deserts do not offer artifacts because of its settling.",
+        "trueOrFalse": false
+      }
     ]
-}
+  }
+  

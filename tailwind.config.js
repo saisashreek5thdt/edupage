@@ -17,6 +17,9 @@ module.exports = {
       backgroundColor: {
         indexLine: "#948888",
       },
+      colors: {
+        highlight: "#43BE15",
+      },
     },
     fontFamily: {
       Quicksand: ["Quicksand", "sans-serif"],

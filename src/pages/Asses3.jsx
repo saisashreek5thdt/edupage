@@ -1,16 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import questions from "./asses3questions.json";
 import brownCamel from "../assets/icons/Camel__brown.png";
-import redCamel from "../assets/icons/Camel__red.png";
-import nextImage from "../assets/assess/next-img.svg";
+import { addDropDown } from "../action/mcqAction";
+import { useNavigate } from "react-router-dom";
 import MenuBtn from "./MenuBtn";
 
 const Asses3 = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [answers, setAnswers] = useState([]);
+
   const renderOptions = (options) => {
-    const option = options.map((op) => (
-      <option className="rounded-xl">{op}</option>
+    return options.map((op, index) => (
+      <option key={index} className="rounded-xl">
+        {op}
+      </option>
     ));
-    return option;
+  };
+
+  const handleOptionSelection = (questionId, selectedOption) => {
+    const answeredQuestion = answers.find((a) => a.id === questionId);
+
+    if (answeredQuestion) {
+      const updatedAnswers = answers.map((a) =>
+        a.id === questionId ? { ...a, answer: selectedOption } : a
+      );
+      setAnswers(updatedAnswers);
+    } else {
+      setAnswers([...answers, { id: questionId, answer: selectedOption }]);
+    }
+  };
+
+  console.log("answers", answers);
+
+  const handleClick = () => {
+    answers.forEach((answer) => {
+      dispatch(addDropDown(answer));
+    });
+
+    setAnswers([]);
+
+    navigate("/page/desert/assesment/scoreboard");
   };
   return (
     <div className="bg-cover absolute top-0 text-gray-700 bg-center h-screen w-screen bg-asses2_image">
@@ -27,23 +59,37 @@ const Asses3 = () => {
         </h4>
         <h3 className="mb-2 mt-6 text-4xl">Choose the correct answer</h3>
         <div className="flex flex-col">
-          {questions.asses3questions.map((q) => (
-            <div
-              key={q.id}
-              className="flex justify-start mt-2 gap-2 flex-grow "
-            >
-              <img alt="camel_logo" src={brownCamel} className=" w-16 " />
-              <p className="w-[72vw] mt-2 ml-4 text-[27px] flex-1">
-                {q.Piece1}
-                <select className="mx-3 border-none rounded-md">
-                  <option>- - - - - - - - - - </option>
-                  {renderOptions(q.options)}
-                </select>
-                {q.Piece2}
-              </p>
-            </div>
-          ))}
+          {questions.asses3questions.map((q) => {
+            const answeredQuestion = answers.find((a) => a.id === q.id);
+            const selectedOption = answeredQuestion
+              ? answeredQuestion.answer
+              : "";
+
+            return (
+              <div
+                key={q.id}
+                className="flex justify-start mt-2 gap-2 flex-grow"
+              >
+                <img alt="camel_logo" src={brownCamel} className="w-16" />
+                <p className="w-[72vw] mt-2 ml-4 text-[27px] flex-1">
+                  {q.Piece1}
+                  <select
+                    className="mx-3 border-none rounded-md"
+                    value={selectedOption}
+                    onChange={(e) =>
+                      handleOptionSelection(q.id, e.target.value)
+                    }
+                  >
+                    <option>Select</option>
+                    {renderOptions(q.options)}
+                  </select>
+                  {q.Piece2}
+                </p>
+              </div>
+            );
+          })}
         </div>
+        <button onClick={handleClick}>Next</button>
       </div>
     </div>
   );

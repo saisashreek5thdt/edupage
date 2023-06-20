@@ -92,6 +92,7 @@ function Audio({ isPlaying }) {
           >
             <tspan x="0" y="0">
               {/* Play Audio */}
+
               {isPlaying ? "Pause Audio" : "Play Audio"}
             </tspan>
           </text>

@@ -11,17 +11,25 @@ import nextImage from "../assets/assess/next-img.svg";
 import allquestion from "./questions.json";
 
 import clickSound from "../assets/audio/click.wav";
+
+// import { addMcqAnswers } from "../action/mcqAction";
+import ScoreBoard from "./ScoreBoard";
+import { useDispatch } from "react-redux";
+
 import { useNavigate } from "react-router-dom";
+import { addMcqAnswers } from "../action/mcqAction";
 import MenuBtn from "./MenuBtn";
 
 function Asses() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [zoomLevel, setZoomLevel] = useState(1);
   const dots = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   const [show, setShow] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
   const [showResult, setShowResult] = useState(false);
-  const navigate = useNavigate();
 
   const clickAudio = new Audio(clickSound);
 
@@ -38,26 +46,24 @@ function Asses() {
   };
 
   const questions = allquestion.questions;
-  console.log(questions);
-
-  const handleOptionClick = (optionIndex) => {
-    if (!showResult) {
-      setSelectedOptionIndex(optionIndex);
-      setShowResult(true);
-      clickAudio.play();
-    }
-  };
 
   const handleNextQuestion = () => {
     if (selectedOptionIndex != null) {
       setSelectedOptionIndex(null);
       setShowResult(false);
-      setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
+      // setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
+
+      if (currentQuestionIndex === questions.length - 1) {
+        // navigate("/page/desert/assesment/scoreboard");
+        navigate("/page/desert/assesment2");
+      } else {
+        setCurrentQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1);
+      }
     }
-    if (currentQuestionIndex === questions.length - 1) {
-      console.log("goto mcq page");
-      navigate("/page/desert/assesment2");
-    }
+    // if (currentQuestionIndex === questions.length - 1) {
+    //   console.log("goto mcq page");
+    //   navigate("/page/desert/assesment2");
+    // }
   };
 
   const renderOptions = () => {
@@ -78,6 +84,21 @@ function Asses() {
           optionClass += " bg-green-500";
         }
       }
+
+      const handleOptionClick = (optionIndex) => {
+        if (!showResult) {
+          setSelectedOptionIndex(optionIndex);
+          setShowResult(true);
+          clickAudio.play();
+
+          dispatch(
+            addMcqAnswers({
+              questionId: currentQuestion.id,
+              answer: currentQuestion.options[optionIndex],
+            })
+          );
+        }
+      };
 
       return (
         <label
