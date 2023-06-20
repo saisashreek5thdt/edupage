@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
-import userIcon from "../assets/images/user/userIcon.png";
-import startbutton from "../assets/assess/start-button.svg";
-// import bgImage from "../assets/assess/bg-image.svg";
 import bgImage from "../assets/bg/activity__bg.png";
-import newbg from "../assets/assess/newbg.svg";
 
 import qBanner from "../assets/assess/questions-banner.svg";
 import nextImage from "../assets/assess/next-img.svg";
@@ -17,6 +13,7 @@ import ScoreBoard from "./ScoreBoard";
 import { useDispatch } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
+
 import { addMcqAnswers } from "../action/mcqAction";
 
 import MenuBtn from "./MenuBtn";
@@ -26,7 +23,7 @@ function Asses() {
   const navigate = useNavigate();
 
   const [zoomLevel, setZoomLevel] = useState(1);
-  const dots = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const dots = [];
   const [show, setShow] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
@@ -66,6 +63,7 @@ function Asses() {
     //   navigate("/page/desert/assesment2");
     // }
   };
+  const optionSeries = ["a", "b", "c", "d"];
 
   const renderOptions = () => {
     const currentQuestion = questions[currentQuestionIndex];
@@ -104,7 +102,7 @@ function Asses() {
       return (
         <label
           key={index}
-          className={`flex items-center bg-white text-gray-900 rounded-full shadow-xl p-2 px-4 ${optionClass}`}
+          className={`flex items-center bg-white text-gray-900 rounded-xl shadow-xl h-16 px-4 relative right-4 bottom-3 ${optionClass}`}
         >
           <input
             type="radio"
@@ -113,7 +111,9 @@ function Asses() {
             checked={isSelected}
             onChange={() => handleOptionClick(index)}
           />
-          <span className="text-md">{option}</span>
+          <span className="text-md">
+            {optionSeries[index]}. {option}
+          </span>
         </label>
       );
     });
@@ -143,7 +143,7 @@ function Asses() {
           <img
             src={qBanner}
             alt="Current Image"
-            className="object-full w-800 h-auto m-3"
+            className="object-full  w-800 h-auto m-3"
           />
           <div className="absolute top-52 mr-28">
             <img
@@ -165,12 +165,12 @@ function Asses() {
             ))}
           </div>
           {/* <div className="flex flex-col  absolute w-[600px] top-2 left-[340px] "> */}
-          <div className="flex flex-col absolute w-[600px] top-2 left-[47%] transform -translate-x-1/2">
-            <h2 className="text-3xl text-center text-gray-700 pb-8">
+          <div className="flex flex-col absolute w-[600px] top-0 left-[47%] transform -translate-x-1/2">
+            <h2 className="text-3xl text-center text-gray-700 pb-9">
               {questions[currentQuestionIndex].id}.{" "}
               {questions[currentQuestionIndex].question}
             </h2>
-            <ul className="text-gray-600 grid grid-cols-2 gap-8">
+            <ul className="text-gray-600 grid grid-cols-2 gap-4">
               {renderOptions()}
             </ul>
           </div>

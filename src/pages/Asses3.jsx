@@ -12,12 +12,14 @@ import submitBtn from "../assets/buttons/Submit_Btn.png";
 import { addDropDown } from "../action/mcqAction";
 import { useNavigate } from "react-router-dom";
 import MenuBtn from "./MenuBtn";
+import clickSound from "../assets/audio/click.wav";
 
 const Asses3 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [answers, setAnswers] = useState([]);
+  const clickAudio = new Audio(clickSound);
 
   const renderOptions = (options) => {
     return options.map((op, index) => (
@@ -29,7 +31,7 @@ const Asses3 = () => {
 
   const handleOptionSelection = (questionId, selectedOption) => {
     const answeredQuestion = answers.find((a) => a.id === questionId);
-
+    clickAudio.play();
     if (answeredQuestion) {
       const updatedAnswers = answers.map((a) =>
         a.id === questionId ? { ...a, answer: selectedOption } : a
@@ -105,6 +107,7 @@ const Asses3 = () => {
             );
           })}
         </div>
+
         <button
           className="flex mt-16 justify-end"
           disabled={isNextButtonDisabled}

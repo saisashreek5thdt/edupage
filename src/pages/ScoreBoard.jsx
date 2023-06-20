@@ -5,10 +5,16 @@ import allquestions from "./questions.json";
 import bgImage from "../assets/bg/activity__bg.png";
 import asses3questions from "./asses3questions.json";
 import submitBtn from "../assets/buttons/Submit_Btn.png";
+import { useNavigate } from "react-router-dom";
 
 function ScoreBoard() {
   const mcqs = useSelector((state) => state.mcq);
   const { mcqAnswers } = mcqs;
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  };
 
   const tf = useSelector((state) => state.trueorfalse);
   const { TFAnswers } = tf;
@@ -25,14 +31,14 @@ function ScoreBoard() {
 
   return (
     <div
-      className="scoreboard-container bg-gray-300 py-4 px-6 w-screen h-screen rounded-sm"
+      className="scoreboard-container bg-gray-300 py-4 px-6 w-screen h-screen  rounded-sm"
       style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
     >
-      <h2 className="scoreboard-heading text-2xl font-semibold mb-4">
+      <h2 className="scoreboard-heading text-3xl font-semibold mb-4">
         Your ScoreBoard
       </h2>
       <div>
-        <div className="flex py-2 px-2 rounded-sm bg-gray-200 text-gray-700 font-semibold">
+        <div className="flex py-2 px-3 rounded-sm bg-gray-200 text-gray-700 font-semibold">
           <div className=" flex-1 ">Question</div>
           <div className=" flex-1">Correct Answer</div>
           <div className=" flex-1">Your Answer</div>
@@ -50,13 +56,13 @@ function ScoreBoard() {
           return (
             <div
               key={mcq.questionId}
-              className={`flex p-1 text-gray-700 px-2 rounded-sm ${
+              className={`flex p-1 text-gray-700 px-3 rounded-sm ${
                 isCorrect ? "bg-green-300" : "bg-red-300"
               }`}
             >
               <div className=" flex-1 ">{question.question}</div>
-              <div className=" flex-1 ">{correctAnswer}</div>
-              <div className=" flex-1 ">{userAnswer}</div>
+              <div className=" flex-1 px-2 ">{correctAnswer}</div>
+              <div className=" flex-1 px-2">{userAnswer}</div>
             </div>
           );
         })}
@@ -74,7 +80,7 @@ function ScoreBoard() {
           return (
             <div
               key={tfAnswer.id}
-              className={`flex p-1 text-gray-700 px-2 rounded-sm ${
+              className={`flex p-1 text-gray-700 px-3 rounded-sm ${
                 isCorrect ? "bg-green-300" : "bg-red-300"
               }`}
             >
@@ -108,21 +114,21 @@ function ScoreBoard() {
               <div className="flex-1 px-2">
                 {question.Piece1}________{question.Piece2}
               </div>
-              <div className="flex-1">{correctAnswer}</div>
-              <div className="flex-1">{userAnswer}</div>
+              <div className="flex-1 mr-5 relative left-1">{correctAnswer}</div>
+              <div className="flex-1 mr-5">{userAnswer}</div>
             </div>
           );
         })}
       </div>
-      <div className="total-correct-answers text-lg p-3">
-        Total Correct Answers: {totalCorrectAnswers}
-      </div>
-      <div className="flex mx-16 mt-6 justify-end">
+      <div className="flex mx-16 mt-4  justify-between">
+        <div className="total-correct-answers font-semibold text-2xl p-3 relative bottom-1">
+          Total Correct Answers: {totalCorrectAnswers}
+        </div>
         <img
           src={submitBtn}
           alt="next"
-          className="h-12 w-32 cursor-pointer"
-          onClick={""}
+          className="h-12 w-32  cursor-pointer  "
+          onClick={() => handleClick()}
         />
       </div>
     </div>
