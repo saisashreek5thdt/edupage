@@ -32,14 +32,14 @@ function ScoreBoard() {
 
   return (
     <div
-      className="scoreboard-container bg-gray-300 py-4 px-6 w-screen h-screen  rounded-sm"
+      className="scoreboard-container bg-gray-300 py-4 px-6 w-screen h-screen rounded-sm"
       style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
     >
       <h2 className="scoreboard-heading text-3xl font-semibold mb-4">
-        Your ScoreBoard
+        Your Score Board
       </h2>
-      <div>
-        <div className="flex py-2 px-3 rounded-sm bg-gray-200 text-gray-700 font-semibold">
+      <div className="shadow-md rounded-2xl   flex flex-col">
+        <div className=" flex py-3 px-3 rounded-sm border-2 border-black-500 bg-gray-200 text-gray-700 font-semibold">
           <div className=" flex-1 ">Question</div>
           <div className=" flex-1">Correct Answer</div>
           <div className=" flex-1">Your Answer</div>
@@ -57,8 +57,8 @@ function ScoreBoard() {
           return (
             <div
               key={mcq.questionId}
-              className={`flex p-1 text-gray-700 px-3 rounded-sm ${
-                isCorrect ? "bg-green-300" : "bg-red-300"
+              className={`flex p-1 border-green-300 text-gray-700 px-3 rounded-sm  ${
+                isCorrect ? "bg-white" : "bg-blue-200"
               }`}
             >
               <div className=" flex-1 ">{question.question}</div>
@@ -81,8 +81,8 @@ function ScoreBoard() {
           return (
             <div
               key={tfAnswer.id}
-              className={`flex p-1 text-gray-700 px-3 rounded-sm ${
-                isCorrect ? "bg-green-300" : "bg-red-300"
+              className={`flex p-1 text-gray-700 px-3 shadow-green-500 rounded-sm ${
+                isCorrect ? "bg-white" : "bg-blue-200"
               }`}
             >
               <div className=" flex-1">{question.question}</div>
@@ -109,7 +109,7 @@ function ScoreBoard() {
             <div
               key={ddAnswer.id}
               className={`flex text-gray-700 p-1 rounded-sm  ${
-                isCorrect ? "bg-green-300" : "bg-red-300"
+                isCorrect ? "bg-white" : "bg-blue-200"
               }`}
             >
               <div className="flex-1 px-2">

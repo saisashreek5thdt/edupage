@@ -104,7 +104,7 @@ function Asses() {
         >
           <input
             type="radio"
-            className="mr-2 text-cyan-500 "
+            className="mr-2 text-cyan-500  "
             name="option"
             checked={isSelected}
             onChange={() => handleOptionClick(index)}
@@ -128,12 +128,13 @@ function Asses() {
           <h1 className="pt-4 pl-4 md:pt-0 md:pl-16 text-4xl">
             Assessment : 1
           </h1>
-          <div className="  mb-4 text-md ml-14 bg-sky-200 inline w-[350px] px-0 relative bottom-16 left-2">
+          <div className="  mb-4 text-md ml-14 bg-sky-200 inline w-[520px] px-0 relative bottom-16 left-2">
             <button className="bg-purple-200 my-[3px] px-1 ml-[2px] rounded-md 1 mr-2 font-Linotte">
               MCQ
             </button>
             <button> I &emsp; True/False &emsp;</button>
-            <button> I &emsp; Choose right answer</button>
+            <button> I &emsp; Choose right answer &emsp;</button>
+            <button> I &emsp; Fill in the blanks </button>
           </div>
         </div>
 

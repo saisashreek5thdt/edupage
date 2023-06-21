@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Player } from "video-react";
+import "video-react/dist/video-react.css";
 import video1 from "../assets/audio/Desert_Video.mp4";
 import "video-react/dist/video-react.css";
 
