@@ -24,7 +24,12 @@ const Asses4 = () => {
 
     navigate("/page/desert/assesment/scoreboard");
   };
-
+  const options = [
+    { id: 1, text: "A. hot and dry desert" },
+    { id: 2, text: "B. coastal desert" },
+    { id: 3, text: "C. semi-arid desert" },
+    { id: 4, text: "D. cold desert" },
+  ];
   //   const isNextButtonDisabled =
   //     answers.length !== questions.asses4questions.length;
 
@@ -39,11 +44,15 @@ const Asses4 = () => {
           </button>
         </div>
         <h3 className="mb-2 mt-4 text-4xl">Drag and drop the correct answer</h3>
-        <div className="grid grid-cols-2  text-2xl w-[460px] gap-1 relative my-2 left-80">
-          <p className="hover:bg-yellow-400 p-1"> A. hot and dry desert</p>
-          <p className="hover:bg-yellow-400 p-1 w-48"> B. coastal desert</p>
-          <p className="hover:bg-yellow-400 p-1 w-56"> C. semi- arid desert</p>
-          <p className="hover:bg-yellow-400 p-1 w-44"> D. cold desert</p>
+        <div className="grid grid-cols-2  text-2xl w-[470px] gap-2 relative my-2 left-80">
+          {options.map((option) => (
+            <p
+              key={option.id}
+              className="border-2  border-dashed border-gray-500  rounded-lg cursor-pointer  hover:bg-yellow-300 p-1"
+            >
+              {option.text}
+            </p>
+          ))}
         </div>
         <div className="flex flex-col">
           {questions.asses4questions.map((q) => {
@@ -62,7 +71,7 @@ const Asses4 = () => {
           })}
         </div>
         <button
-          className="flex mt-16 justify-end"
+          className="flex mt-6 justify-end"
           //   disabled={isNextButtonDisabled}
           onClick={handleClick}
         >
