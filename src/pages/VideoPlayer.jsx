@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Player } from "video-react";
 import "video-react/dist/video-react.css";
 import video1 from "../assets/audio/Desert_Video.mp4";
+import "video-react/dist/video-react.css";
 
 const VideoPlayer = () => {
   const playerRef = useRef(null);
@@ -62,14 +63,6 @@ const VideoPlayer = () => {
               >
                 Close
               </button>
-              {/* 
-              <button
-                type="button"
-                className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1"
-              >
-                Save Changes
-              </button>
-               */}
             </div>
           </div>
         </div>

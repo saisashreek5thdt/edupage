@@ -3,9 +3,7 @@ import bgImage from "../assets/bg/activity__bg.png";
 
 import qBanner from "../assets/assess/questions-banner.svg";
 import nextImage from "../assets/assess/next-img.svg";
-
 import allquestion from "./questions.json";
-
 import clickSound from "../assets/audio/click.wav";
 
 // import { addMcqAnswers } from "../action/mcqAction";

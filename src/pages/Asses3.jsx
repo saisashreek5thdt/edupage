@@ -52,8 +52,9 @@ const Asses3 = () => {
     navigate("/page/desert/assesment4");
   };
 
-  const isNextButtonDisabled =
-    answers.length !== questions.asses3questions.length;
+  // const isNextButtonDisabled =
+  // answers.length !== questions.asses3questions.length;
+  const isNextButtonDisabled = answers.length < 1;
 
   return (
     <div className="bg-cover absolute top-0 text-gray-700 bg-center h-screen w-screen bg-asses2_image">
@@ -115,14 +116,6 @@ const Asses3 = () => {
         >
           <img src={nextBtn} alt="next" className="h-12 w-32 cursor-pointer" />
         </button>
-        {/* <div className="flex mt-8 justify-end">
-          <img
-            src={nextBtn}
-            alt="next"
-            className="h-12 w-32 cursor-pointer"
-            onClick={handleClick}
-          />
-        </div> */}
       </div>
     </div>
   );

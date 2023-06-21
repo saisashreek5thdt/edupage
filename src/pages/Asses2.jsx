@@ -6,6 +6,7 @@ import redCamel from "../assets/icons/Camel__red.png";
 import greenCamel from "../assets/icons/Camel__green.png";
 import trueBtn from "../assets/buttons/Btn__true.png";
 import falseBtn from "../assets/buttons/Btn__false.png";
+
 import { addTrueOrFalse } from "../action/mcqAction";
 import { useNavigate } from "react-router-dom";
 import clickSound from "../assets/audio/click.wav";
@@ -33,8 +34,7 @@ const Assess2 = () => {
     navigate("/page/desert/assesment3");
   };
 
-  const isNextButtonDisabled =
-    answers.length !== questions.asses2questions.length;
+  const isNextButtonDisabled = answers.length < 1;
 
   return (
     <div className="bg-cover absolute top-0 text-gray-700 bg-center h-screen w-screen bg-asses2_image">

@@ -14,6 +14,7 @@ function ScoreBoard() {
 
   const handleClick = () => {
     navigate("/");
+    window.location.reload();
   };
 
   const tf = useSelector((state) => state.trueorfalse);
