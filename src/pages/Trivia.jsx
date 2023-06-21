@@ -63,63 +63,66 @@ const Trivia = () => {
   const currentImage = images[currentImageIndex];
 
   return (
-    <div className="flex flex-col justify-between h-72">
-      <div className="w-screen flex justify-between">
-        <h1 className="pt-4 pl-4 md:pt-16 md:pl-16 text-2xl">Trivia</h1>
-        <img
-          src={userIcon}
-          alt="Current Image"
-          className="object-contain w-16 h-16 m-3 rounded-full mr-10"
-        />
-      </div>
-      <div className="flex flex-col items-center justify-center relative">
-        <div className="relative flex items-center justify-center">
-          <button
-            onClick={handlePrevClick}
-            className="md:p-4 p-2 rounded-full text-gray-400 md:text-6xl sm:text-3xl duration-500 hover:text-gray-600"
-          >
-            <FiChevronLeft />
-          </button>
+    <>
+      <div className="flex flex-col justify-between h-72">
+        <div className="w-screen flex justify-between">
+          <h1 className="pt-4 pl-4 md:pt-16 md:pl-16 text-2xl">Trivia</h1>
           <img
-            src={currentImage.src}
+            src={userIcon}
             alt="Current Image"
-            className={`object-contain xl:w-700 lg:w-2/4 w-72 md:w-3/4 h-auto`}
+            className="object-contain w-16 h-16 m-3 rounded-full mr-10"
           />
-          <button
-            onClick={handleNextClick}
-            className="md:p-4 p-2 rounded-full text-gray-400 md:text-6xl sm:text-3xl hover:text-gray-600"
-          >
-            <FiChevronRight />
-          </button>
         </div>
-        <div className="mt-1 flex justify-center items-center shadow-xl pt-2">
-          <p className="bg-white p-1 sm:w-fit md:w-700 md:p-3 text-blue-900 text-sm text-center w-700 flex">
-            <img src={treeImg} className="w-14" />
-            <p className="pl-5 xl:text-sm text-left font-medium">
-              {currentImage.description}
+        <div className="flex flex-col items-center justify-center relative">
+          <div className="relative flex items-center justify-center">
+            <button
+              onClick={handlePrevClick}
+              className="md:p-4 p-2 rounded-full text-gray-400 md:text-6xl sm:text-3xl duration-500 hover:text-gray-600"
+            >
+              <FiChevronLeft />
+            </button>
+            <img
+              src={currentImage.src}
+              alt="Current Image"
+              className={`object-contain xl:w-700 lg:w-2/4 w-72 md:w-3/4 h-auto`}
+            />
+            <button
+              onClick={handleNextClick}
+              className="md:p-4 p-2 rounded-full text-gray-400 md:text-6xl sm:text-3xl hover:text-gray-600"
+            >
+              <FiChevronRight />
+            </button>
+          </div>
+          <div className="mt-1 flex justify-center items-center shadow-xl pt-2">
+            <p className="bg-white p-1 sm:w-fit md:w-700 md:p-3 text-blue-900 text-sm text-center w-700 flex">
+              <img src={treeImg} className="w-14" />
+              <p className="pl-5 xl:text-sm text-left font-medium">
+                {currentImage.description}
+              </p>
             </p>
-          </p>
+          </div>
+
+          <div className="mt-3 flex items-center justify-center space-x-2">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${
+                  index <= currentImageIndex ? "bg-red-300" : "bg-gray-400"
+                }`}
+              ></div>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-3 flex items-center justify-center space-x-2">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${
-                index <= currentImageIndex ? "bg-red-300" : "bg-gray-400"
-              }`}
-            ></div>
-          ))}
+        <div className="absolute bottom-5">
+          <Footer
+            last={"/page/desert/vegetation/"}
+            next={"/page/desert/assesment"}
+            hidePageBtn={false}
+          />
         </div>
       </div>
-      <div className="absolute bottom-5">
-        <Footer
-          last={"/page/desert/vegetation/"}
-          next={"/page/desert/assesment"}
-          hidePageBtn={false}
-        />
-      </div>
-    </div>
+    </>
   );
 };
 
