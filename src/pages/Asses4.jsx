@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 // import questions from "./asses3questions.json";
 import questions from "./asses4questions.json";
-import brownCamel from "../assets/icons/Camel__brown.png";
-
-import redCamel from "../assets/icons/Camel__red.png";
-import greenCamel from "../assets/icons/Camel__green.png";
 
 import nextBtn from "../assets/buttons/NXT_Btn.png";
 
@@ -42,13 +38,13 @@ const Asses4 = () => {
             Fill in the blanks
           </button>
         </div>
-        {/* <div className="grid grid-cols-2">
-          <p> A.hot and dry desert</p>
-          <p> B.coastal desert</p>
-          <p> C.semi- arid desert</p>
-          <p> D.cold desert</p>
-        </div> */}
-        <h3 className="mb-2 mt-4 text-4xl">Choose the correct answer</h3>
+        <h3 className="mb-2 mt-4 text-4xl">Drag and drop the correct answer</h3>
+        <div className="grid grid-cols-2  text-2xl w-[460px] gap-1 relative my-2 left-80">
+          <p className="hover:bg-yellow-400 p-1"> A. hot and dry desert</p>
+          <p className="hover:bg-yellow-400 p-1 w-48"> B. coastal desert</p>
+          <p className="hover:bg-yellow-400 p-1 w-56"> C. semi- arid desert</p>
+          <p className="hover:bg-yellow-400 p-1 w-44"> D. cold desert</p>
+        </div>
         <div className="flex flex-col">
           {questions.asses4questions.map((q) => {
             return (

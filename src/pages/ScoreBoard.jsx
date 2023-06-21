@@ -57,8 +57,8 @@ function ScoreBoard() {
           return (
             <div
               key={mcq.questionId}
-              className={`flex p-1 border-green-300 text-gray-700 px-3 rounded-sm  ${
-                isCorrect ? "bg-white" : "bg-blue-200"
+              className={`flex p-1  text-gray-900 px-3 rounded-sm  ${
+                isCorrect ? "bg-blue-200" : "bg-white"
               }`}
             >
               <div className=" flex-1 ">{question.question}</div>
@@ -82,7 +82,7 @@ function ScoreBoard() {
             <div
               key={tfAnswer.id}
               className={`flex p-1 text-gray-700 px-3 shadow-green-500 rounded-sm ${
-                isCorrect ? "bg-white" : "bg-blue-200"
+                isCorrect ? "bg-blue-200" : "bg-white"
               }`}
             >
               <div className=" flex-1">{question.question}</div>
@@ -109,7 +109,7 @@ function ScoreBoard() {
             <div
               key={ddAnswer.id}
               className={`flex text-gray-700 p-1 rounded-sm  ${
-                isCorrect ? "bg-white" : "bg-blue-200"
+                isCorrect ? "bg-blue-200" : "bg-white"
               }`}
             >
               <div className="flex-1 px-2">

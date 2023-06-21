@@ -6,6 +6,7 @@ import redCamel from "../assets/icons/Camel__red.png";
 import greenCamel from "../assets/icons/Camel__green.png";
 import trueBtn from "../assets/buttons/Btn__true.png";
 import falseBtn from "../assets/buttons/Btn__false.png";
+
 import { addTrueOrFalse } from "../action/mcqAction";
 import { useNavigate } from "react-router-dom";
 import clickSound from "../assets/audio/click.wav";
