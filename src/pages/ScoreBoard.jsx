@@ -4,6 +4,7 @@ import questionsData from "./asses2questions.json";
 import allquestions from "./questions.json";
 import bgImage from "../assets/bg/activity__bg.png";
 import asses3questions from "./asses3questions.json";
+import asses4questions from "./asses4questions.json";
 import submitBtn from "../assets/buttons/Submit_Btn.png";
 import { useNavigate } from "react-router-dom";
 
@@ -22,11 +23,20 @@ function ScoreBoard() {
 
   const DD = useSelector((state) => state.dropDown);
   const { dropAnswers } = DD;
-  //   console.log(DD);
+
+  console.log("dropAnswers", dropAnswers);
+
+  const Drag_Drop = useSelector((state) => state.dragdrops);
+  const { dragdrop } = Drag_Drop;
+
+  console.log("dragdrop", dragdrop);
 
   const mcqQuestions = allquestions.questions; // mcq data
   const tfQuestions = questionsData.asses2questions; // true/false data
   const ddQuestions = asses3questions.asses3questions; // Dropdown data
+  const drdQuestions = asses4questions.asses4questions; // dnd data
+
+  console.log(drdQuestions);
 
   let totalCorrectAnswers = 0;
 
@@ -117,6 +127,33 @@ function ScoreBoard() {
               </div>
               <div className="flex-1 mr-5 relative left-1">{correctAnswer}</div>
               <div className="flex-1 mr-5">{userAnswer}</div>
+            </div>
+          );
+        })}
+
+        {dragdrop?.map((dd) => {
+          const question = drdQuestions.find((q) => parseInt(dd.id) === q.id);
+
+          const correctAnswer = question?.correctAnswer;
+
+          const userAnswer = dd.answer;
+
+          const isCorrect = userAnswer === correctAnswer;
+
+          if (isCorrect) {
+            totalCorrectAnswers++;
+          }
+
+          return (
+            <div
+              key={dd.id}
+              className={`flex text-gray-700 p-1 rounded-sm  ${
+                isCorrect ? "bg-blue-200" : "bg-white"
+              }`}
+            >
+              <div className=" flex-1">{question.question}</div>
+              <div className=" flex-1">{correctAnswer}</div>
+              <div className=" flex-1">{userAnswer.split(".")[1]}</div>
             </div>
           );
         })}

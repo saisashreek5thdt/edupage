@@ -5,21 +5,31 @@ import { useNavigate } from "react-router-dom";
 
 import MenuBtn from "./MenuBtn";
 import nextBtn from "../assets/buttons/NXT_Btn.png";
-import { addDropDown } from "../action/mcqAction";
+import { addDragDrop } from "../action/mcqAction";
 import questions from "./asses4questions.json";
 
 const Asses4 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [answers, setAnswers] = useState([]);
+  const [answers, setAnswers] = useState({});
+
+  console.log("answers------>", answers);
 
   const handleClick = () => {
-    answers.forEach((answer) => {
-      dispatch(addDropDown(answer));
+    // const answersList = Object.values(answers);
+    // console.log(answersList);
+
+    const answersList = Object.entries(answers).map(([id, answer]) => ({
+      id,
+      answer,
+    }));
+
+    answersList.forEach((answer) => {
+      dispatch(addDragDrop(answer));
     });
 
-    setAnswers([]);
+    // setAnswers({});
 
     navigate("/page/desert/assesment/scoreboard");
   };
@@ -49,10 +59,24 @@ const Asses4 = () => {
       (option) => option.id.toString() === result.draggableId
     );
 
-    const updatedAnswers = [...answers];
-    const currentAnswer = updatedAnswers[source.index] || "";
-    updatedAnswers[source.index] = currentAnswer + " " + draggedOption.text;
-    setAnswers(updatedAnswers);
+    const questionId = destination.droppableId.split("-")[1];
+    const answer = answers[questionId] || "";
+
+    if (answer.includes(draggedOption.text)) {
+      // If the answer already contains the dragged option, replace it
+      const updatedAnswer = answer.replace(draggedOption.text, "");
+      setAnswers((prevAnswers) => ({
+        ...prevAnswers,
+        [questionId]: updatedAnswer,
+      }));
+    } else {
+      // Otherwise, add the dragged option to the answer
+      const updatedAnswer = draggedOption.text;
+      setAnswers((prevAnswers) => ({
+        ...prevAnswers,
+        [questionId]: updatedAnswer,
+      }));
+    }
   };
 
   return (
@@ -69,74 +93,55 @@ const Asses4 = () => {
           <h3 className="mb-2 mt-4 text-4xl">
             Drag and drop the correct answer
           </h3>
-          <div className="grid grid-cols-2 gap-1 relative my-2 left-80">
-            <Droppable droppableId="input-1">
-              {(provided) => (
-                <div
-                  className="bg-white border border-gray-300 rounded-md p-1"
-                  ref={provided.innerRef}
-                  {...provided.droppableProps}
-                >
-                  <input
-                    type="text"
-                    placeholder=""
-                    className="text-2xl overflow-x-hidden hover:outline-none w-full py-0 align-bottom border-b-gray-600 focus:ring-0 outline-transparent border-b-2 border-x-0 border-t-0 bg-transparent"
-                    value={answers[0] || ""}
-                    onChange={(e) => {
-                      const updatedAnswers = [...answers];
-                      updatedAnswers[0] = e.target.value;
-                      setAnswers(updatedAnswers);
-                    }}
-                  />
-                </div>
-              )}
-            </Droppable>
-            <Droppable droppableId="options">
-              {(provided) => (
-                <div
-                  className="flex flex-wrap bg-white border border-gray-300 rounded-md p-1"
-                  ref={provided.innerRef}
-                  {...provided.droppableProps}
-                >
-                  {options.map((option) => (
-                    <Draggable
-                      key={option.id}
-                      draggableId={option.id.toString()}
-                      index={option.id}
-                    >
-                      {(provided) => (
-                        <p
-                          className="hover:bg-yellow-400 p-1 bg-white border border-gray-300 rounded-md m-1"
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                          ref={provided.innerRef}
-                        >
-                          {option.text}
-                        </p>
-                      )}
-                    </Draggable>
-                  ))}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </div>
+
+          <Droppable droppableId="options">
+            {(provided) => (
+              <div
+                className="grid grid-cols-2 p-2 text-2xl w-[520px] gap-2 relative m-2 left-80"
+                ref={provided.innerRef}
+                {...provided.droppableProps}
+              >
+                {options.map((option) => (
+                  <Draggable
+                    key={option.id}
+                    draggableId={option.id.toString()}
+                    index={option.id}
+                  >
+                    {(provided) => (
+                      <p
+                        className="border-2  border-dashed border-gray-500 rounded-lg cursor-pointer  hover:bg-yellow-300 p-1 m-1"
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                      >
+                        {option.text}
+                      </p>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+
           <div className="flex flex-col">
-            {questions.asses4questions.map((q, index) => (
+            {questions.asses4questions.map((q) => (
               <div key={q.id} className="flex justify-start mt-2 flex-grow">
                 <Droppable droppableId={`question-${q.id}`}>
                   {(provided) => (
-                    <div ref={provided.innerRef} {...provided.droppableProps}>
+                    <div>
                       <input
                         type="text"
                         placeholder=""
-                        className="text-2xl overflow-x-hidden hover:outline-none w-56 py-0 align-bottom border-b-gray-600 focus:ring-0 outline-transparent border-b-2 border-x-0 border-t-0 bg-transparent"
-                        value={answers[index + 1] || ""}
+                        className="text-2xl overflow-x-hidden hover:outline-none w-72 py-0 align-bottom border-b-gray-600 focus:ring-0 outline-transparent border-b-2 border-x-0 border-t-0 bg-transparent"
+                        value={answers[q.id] || ""}
                         onChange={(e) => {
-                          const updatedAnswers = [...answers];
-                          updatedAnswers[index + 1] = e.target.value;
+                          const updatedAnswers = { ...answers };
+                          updatedAnswers[q.id] = e.target.value;
                           setAnswers(updatedAnswers);
                         }}
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
                       />
                       {provided.placeholder}
                     </div>
