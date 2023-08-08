@@ -37,4 +37,15 @@ export const dropDownReducer = (state = { dropAnswers: [] }, action) => {
   }
 };
 
-// export default mcqResultsReducer;
+export const dragdropReducer = (state = { dragdrop: [] }, action) => {
+  switch (action.type) {
+    case "ADD_DRAG_DROP":
+      return {
+        ...state,
+        dragdrop: [...state.dragdrop, action.payload],
+      };
+
+    default:
+      return state;
+  }
+};

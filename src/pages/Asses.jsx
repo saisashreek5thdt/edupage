@@ -3,9 +3,7 @@ import bgImage from "../assets/bg/activity__bg.png";
 
 import qBanner from "../assets/assess/questions-banner.svg";
 import nextImage from "../assets/assess/next-img.svg";
-
 import allquestion from "./questions.json";
-
 import clickSound from "../assets/audio/click.wav";
 
 // import { addMcqAnswers } from "../action/mcqAction";
@@ -130,12 +128,13 @@ function Asses() {
           <h1 className="pt-4 pl-4 md:pt-0 md:pl-16 text-4xl">
             Assessment : 1
           </h1>
-          <div className="  mb-4 text-md ml-14 bg-sky-200 inline w-[350px] px-0 relative bottom-16 left-2">
+          <div className="  mb-4 text-md ml-14 bg-sky-200 inline w-[520px] px-0 relative bottom-16 left-2">
             <button className="bg-purple-200 my-[3px] px-1 ml-[2px] rounded-md 1 mr-2 font-Linotte">
               MCQ
             </button>
             <button> I &emsp; True/False &emsp;</button>
-            <button> I &emsp; Choose right answer</button>
+            <button> I &emsp; Choose right answer &emsp;</button>
+            <button> I &emsp; Fill in the blanks </button>
           </div>
         </div>
 

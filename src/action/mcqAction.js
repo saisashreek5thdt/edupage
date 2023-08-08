@@ -16,3 +16,8 @@ export const addDropDown = (answer) => ({
   type: "ADD_DROP_DOWN",
   payload: answer,
 });
+
+export const addDragDrop = (answer) => ({
+  type: "ADD_DRAG_DROP",
+  payload: answer,
+});
