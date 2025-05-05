@@ -32,6 +32,10 @@ function Footer({
   last,
   hideLastTopicBtn,
 }) {
+  const currentDate = new Date();
+  const currentMonth = currentDate.toLocaleString("default", { month: "long" }); // Full month name
+  const currentYear = currentDate.getFullYear();
+
   return (
     <div className="bg-sky-700 z-0 relative top-5 flex justify-between h-13 w-screen pt-2 pb-2 text-white text-sm">
       <div className="flex w-1/4 justify-between">
@@ -46,7 +50,9 @@ function Footer({
         </Link>
 
         <p className="p-2">User Name</p>
-        <p className="p-2">June 2023</p>
+        <p className="p-2">
+          {currentMonth} {currentYear}
+        </p>
       </div>
       <div className="w-1/3 flex flex-col justify-end text-center align-baseline">
         <Link to={"/"} className="flex justify-center">
